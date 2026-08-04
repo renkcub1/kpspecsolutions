@@ -1,0 +1,135 @@
+import flooringVideo from "../../assets/Images/collections/flooring/hero.mp4";
+import flooringPoster from "../../assets/Images/collections/flooring/poster.webp";
+
+function Collections() {
+  return (
+    <section id="collections" className="bg-[#F8F7F3]">
+
+      {/* =========================
+          INTRO
+      ========================== */}
+
+      <div className="mx-auto max-w-5xl px-8 pt-36 pb-24 text-center">
+
+        <p className="mb-6 uppercase tracking-[0.45em] text-sm font-semibold text-[#8A9A7B]">
+          Curated Material Collections
+        </p>
+
+        <h2 className="font-serif text-[72px] leading-[0.95] text-[#2B2B2B]">
+          Materials Selected
+          <br />
+          for Inspired Spaces
+        </h2>
+
+        <div className="mx-auto mt-10 h-[3px] w-28 rounded-full bg-[#8A9A7B]" />
+
+        <p className="mx-auto mt-10 max-w-4xl text-[22px] leading-10 text-[#666666]">
+          Every manufacturer we represent is intentionally selected for
+          exceptional craftsmanship, proven performance, and timeless design.
+          Our curated collections help designers, architects, owners, and
+          contractors specify materials with confidence.
+        </p>
+
+      </div>
+
+      {/* =========================
+          WOOD & PERFORMANCE FLOORING
+      ========================== */}
+
+      <div className="mx-auto max-w-7xl px-8 pb-36">
+
+        <div className="grid items-center gap-20 lg:grid-cols-2">
+
+          {/* VIDEO */}
+
+          <div className="overflow-hidden rounded-[32px] shadow-2xl">
+
+            <video
+              className="h-full w-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+              poster={flooringPoster}
+            >
+              <source src={flooringVideo} type="video/mp4" />
+            </video>
+
+          </div>
+
+          {/* CONTENT */}
+
+          <div>
+
+            <p className="uppercase tracking-[0.45em] text-sm font-semibold text-[#8A9A7B]">
+              Collection 01
+            </p>
+
+            <h3 className="mt-5 font-serif text-[56px] leading-[1.05] text-[#2B2B2B]">
+              Wood &
+              <br />
+              Performance Flooring
+            </h3>
+
+            <div className="mt-8 h-[3px] w-24 rounded-full bg-[#8A9A7B]" />
+
+            <p className="mt-10 text-[20px] leading-9 text-[#666666]">
+              Premium hardwood and performance flooring solutions selected for
+              commercial interiors where durability, craftsmanship, and timeless
+              design are equally important.
+            </p>
+
+            <div className="mt-12">
+
+              <p className="uppercase tracking-[0.35em] text-xs font-semibold text-[#8A9A7B]">
+                Represented Manufacturers
+              </p>
+
+              <div className="mt-6 space-y-4">
+
+                <div className="flex items-center justify-between border-b border-[#DDD8CF] pb-4">
+
+                  <span className="font-serif text-2xl text-[#2B2B2B]">
+                    Nydree Flooring
+                  </span>
+
+                  <span className="text-[#8A9A7B]">
+                    Premium Hardwood
+                  </span>
+
+                </div>
+
+                <div className="flex items-center justify-between border-b border-[#DDD8CF] pb-4">
+
+                  <span className="font-serif text-2xl text-[#2B2B2B]">
+                    EverStep
+                  </span>
+
+                  <span className="text-[#8A9A7B]">
+                    Luxury Vinyl Tile
+                  </span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <a
+              href="#"
+              className="mt-14 inline-flex rounded-full bg-[#8F9F7A] px-8 py-4 text-sm font-semibold uppercase tracking-[0.25em] text-white transition duration-300 hover:bg-[#798868]"
+            >
+              Explore Flooring
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+  );
+}
+
+export default Collections;

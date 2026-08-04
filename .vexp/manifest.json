@@ -1,0 +1,17 @@
+{
+  "file_hashes": {
+    "README.md": "490bb5928e484a329d622b41075b492ebf20de807ea2d94b86b8ec7b7aa9f26c",
+    "src/App.tsx": "5474c322cb2297431d7bd702e4ec801537aa816bdb7eaa561f6e41d37dda86a0",
+    "src/main.tsx": "38100bf00999ea8c9eaa2ce533026142a182c44bb01c0cf65215f9bf3a9a0f4b",
+    "vite.config.ts": "18e6e5b3356915719a37de7c4e54f93df199f0b72bff66fc111da549993d5cf0"
+  },
+  "indexed_at_commit": "",
+  "indexed_at_timestamp": "2026-07-31T14:49:37.660500600+00:00",
+  "schema_version": 3,
+  "stats": {
+    "total_edges": 7,
+    "total_files": 4,
+    "total_nodes": 9
+  },
+  "vexp_version": "2.4.0"
+}

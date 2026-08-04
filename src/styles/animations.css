@@ -1,0 +1,121 @@
+/* ======================================================
+   KP SPEC SOLUTIONS
+   ANIMATIONS
+====================================================== */
+
+/* ==========================================
+   HERO SLOW ZOOM
+========================================== */
+
+@keyframes heroZoom {
+
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.08);
+  }
+
+}
+
+.hero-background {
+
+  animation: heroZoom 40s linear infinite;
+}
+
+/* ==========================================
+   FADE UP
+========================================== */
+
+@keyframes fadeUp {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateY(40px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+  }
+
+}
+
+.fade-up {
+
+  animation: fadeUp .9s ease forwards;
+}
+
+/* ==========================================
+   FADE IN
+========================================== */
+
+@keyframes fadeIn {
+
+  from {
+
+    opacity: 0;
+
+  }
+
+  to {
+
+    opacity: 1;
+
+  }
+
+}
+
+.fade-in {
+
+  animation: fadeIn 1.2s ease forwards;
+}
+
+/* ==========================================
+   FLOAT
+========================================== */
+
+@keyframes floating {
+
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+
+}
+
+.floating {
+
+  animation: floating 4s ease-in-out infinite;
+}
+
+/* ==========================================
+   HOVER LIFT
+========================================== */
+
+.hover-lift {
+
+  transition: transform .35s ease,
+              box-shadow .35s ease;
+}
+
+.hover-lift:hover {
+
+  transform: translateY(-8px);
+
+  box-shadow: 0 25px 45px rgba(0,0,0,.15);
+}
