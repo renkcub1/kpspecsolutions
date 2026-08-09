@@ -1,23 +1,23 @@
+import { Routes, Route } from "react-router-dom";
+
 import Navbar from "./components/layout/Navbar";
-import Hero from "./components/sections/Hero";
-import About from "./components/sections/About";
-import Collections from "./components/sections/Collections";
-import Resources from "./components/sections/Resources";
-import RequestPresentation from "./components/sections/RequestPresentation";
 import Footer from "./components/layout/Footer";
+
+import Home from "./pages/Home";
+import ManufacturerPage from "./pages/ManufacturerPage";
 
 function App() {
   return (
     <>
       <Navbar />
 
-      <main>
-        <Hero />
-        <About />
-        <Collections />
-        <Resources />
-        <RequestPresentation />
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/manufacturers/:slug"
+          element={<ManufacturerPage />}
+        />
+      </Routes>
 
       <Footer />
     </>

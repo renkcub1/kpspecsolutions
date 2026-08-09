@@ -6,8 +6,6 @@ function Hero() {
       id="home"
       className="relative h-[92vh] min-h-[780px] overflow-hidden"
     >
-      {/* Background */}
-
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
@@ -15,16 +13,10 @@ function Hero() {
         }}
       />
 
-      {/* Overlay */}
-
       <div className="absolute inset-0 bg-black/40" />
 
-      {/* Content */}
-
       <div className="relative z-10 mx-auto flex h-full max-w-7xl items-center px-10 lg:px-16">
-
         <div className="max-w-3xl">
-
           <p className="mb-6 text-sm font-semibold uppercase tracking-[0.45em] text-[#B7C6A4]">
             KP SPEC SOLUTIONS
           </p>
@@ -44,61 +36,24 @@ function Hero() {
           </p>
 
           <div className="mt-10 flex flex-wrap gap-5">
-
             <a
               href="#collections"
-              className="
-                rounded-full
-                bg-[#8F9F7A]
-                px-9
-                py-4
-                text-sm
-                font-semibold
-                uppercase
-                tracking-[0.20em]
-                text-white
-                transition-all
-                duration-300
-                hover:-translate-y-1
-                hover:bg-[#798868]
-              "
+              className="rounded-full bg-[#8F9F7A] px-9 py-4 text-sm font-semibold uppercase tracking-[0.20em] text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#798868]"
             >
               Explore Collections
             </a>
 
             <a
               href="#presentation"
-              className="
-                rounded-full
-                border
-                border-white/40
-                bg-white/10
-                px-9
-                py-4
-                text-sm
-                font-semibold
-                uppercase
-                tracking-[0.20em]
-                text-white
-                backdrop-blur-md
-                transition-all
-                duration-300
-                hover:bg-white/20
-              "
+              className="rounded-full border border-white/40 bg-white/10 px-9 py-4 text-sm font-semibold uppercase tracking-[0.20em] text-white backdrop-blur-md transition-all duration-300 hover:bg-white/20"
             >
               Request Presentation
             </a>
-
           </div>
-
         </div>
-
       </div>
 
-      {/* Scroll Indicator */}
-
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white">
-
         <svg
           width="28"
           height="28"
@@ -110,9 +65,7 @@ function Hero() {
           <path d="M14 6v16" />
           <path d="M7 15l7 7 7-7" />
         </svg>
-
       </div>
-
     </section>
   );
 }

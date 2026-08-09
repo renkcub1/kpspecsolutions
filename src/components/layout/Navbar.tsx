@@ -14,7 +14,7 @@ function Navbar() {
       <nav
         className="
           w-full
-          max-w-[1450px]
+          max-w-[1650px]
           rounded-[30px]
           border border-white/50
           bg-white/75
@@ -24,7 +24,7 @@ function Navbar() {
           duration-500
         "
       >
-        <div className="flex h-[90px] items-center justify-between px-10">
+        <div className="flex h-[78px] items-center justify-between px-10">
 
           {/* Logo */}
 
@@ -35,13 +35,13 @@ function Navbar() {
             <img
               src={logo}
               alt="KP Spec Solutions"
-              className="h-12 w-auto object-contain"
+              className="h-9 max-w-[220px] object-contain"
             />
           </a>
 
           {/* Navigation */}
 
-          <ul className="hidden items-center gap-10 lg:flex">
+         <ul className="hidden items-center gap-14 lg:flex">
 
             {navItems.map((item) => (
 
