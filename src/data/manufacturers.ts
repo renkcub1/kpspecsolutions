@@ -1,5 +1,13 @@
 import nydreeHero from "../assets/Images/manufacturers/nydree/nydree-hero.webp";
 
+import nydreeLogoWhite from "../assets/manufacturers/nydree_logo_white.png";
+import everstepLogo from "../assets/manufacturers/everstep_logo.png";
+import gmsLogo from "../assets/manufacturers/gms_black_logo.png";
+import pssLogo from "../assets/manufacturers/pss_black_logo.png";
+import tcgLogo from "../assets/manufacturers/tcg_logo.png";
+import buloLogo from "../assets/manufacturers/bulo_logo.png";
+import pointLogo from "../assets/manufacturers/point_logo.png";
+
 export interface Manufacturer {
   slug: string;
   name: string;
@@ -7,6 +15,7 @@ export interface Manufacturer {
   description: string;
   website: string;
   heroImage?: string;
+  logo?: string;
 }
 
 export const manufacturers: Manufacturer[] = [
@@ -18,7 +27,9 @@ export const manufacturers: Manufacturer[] = [
       "Beautiful commercial flooring solutions combining the warmth of natural wood with the durability today's commercial environments require.",
     website: "https://www.nydreeflooring.com/",
     heroImage: nydreeHero,
+    logo: nydreeLogoWhite,
   },
+
   {
     slug: "everstep",
     name: "EverStep",
@@ -26,7 +37,9 @@ export const manufacturers: Manufacturer[] = [
     description:
       "Premium commercial luxury vinyl flooring engineered for durability and performance.",
     website: "https://www.everstepflooring.com/",
+    logo: everstepLogo,
   },
+
   {
     slug: "giles-miller-studio",
     name: "Giles Miller Studio",
@@ -34,7 +47,9 @@ export const manufacturers: Manufacturer[] = [
     description:
       "Sculptural architectural surfaces transforming commercial interiors.",
     website: "https://gilesmiller.com/",
+    logo: gmsLogo,
   },
+
   {
     slug: "prime-surface-solutions",
     name: "Prime Surface Solutions",
@@ -42,7 +57,9 @@ export const manufacturers: Manufacturer[] = [
     description:
       "Innovative decorative wall systems for hospitality and commercial interiors.",
     website: "https://www.primesurfacesolutions.biz/",
+    logo: pssLogo,
   },
+
   {
     slug: "tcg-glass",
     name: "TCG Glass",
@@ -50,7 +67,9 @@ export const manufacturers: Manufacturer[] = [
     description:
       "Decorative glass systems for healthcare, workplace and hospitality.",
     website: "https://tcgglass.com/",
+    logo: tcgLogo,
   },
+
   {
     slug: "bulo",
     name: "Bulo",
@@ -58,7 +77,9 @@ export const manufacturers: Manufacturer[] = [
     description:
       "European furniture blending comfort, craftsmanship and timeless design.",
     website: "https://bulo.com/bulo-usa/",
+    logo: buloLogo,
   },
+
   {
     slug: "point",
     name: "POINT",
@@ -66,5 +87,6 @@ export const manufacturers: Manufacturer[] = [
     description:
       "Luxury outdoor furnishings for commercial hospitality environments.",
     website: "https://www.point1920.com/",
+    logo: pointLogo,
   },
 ];

@@ -1,7 +1,9 @@
 import { useParams } from "react-router-dom";
-import { manufacturers } from "../data/manufacturers";
 
-import ManufacturerHero from "../components/manufacturer/ManufacturerHero";
+import ManufacturerHeroV2 from "../components/manufacturer/ManufacturerHeroV2";
+import ManufacturerInfoCard from "../components/manufacturer/ManufacturerInfoCard";
+
+import { manufacturers } from "../data/manufacturers";
 
 export default function ManufacturerPage() {
   const { slug } = useParams();
@@ -21,21 +23,27 @@ export default function ManufacturerPage() {
   }
 
   return (
-    <main className="bg-[#F8F6F2]">
+    <main>
 
-      <ManufacturerHero
+      <ManufacturerHeroV2
         name={manufacturer.name}
         title={manufacturer.title}
         description={manufacturer.description}
         heroImage={manufacturer.heroImage}
+        logo={manufacturer.logo}
+      />
+
+      <ManufacturerInfoCard
+        name={manufacturer.name}
+        title={manufacturer.title}
+        website={manufacturer.website}
       />
 
       {/* About */}
 
-      <section className="mx-auto grid max-w-7xl gap-24 px-8 py-28 lg:grid-cols-2">
+      <section className="mx-auto grid max-w-7xl gap-24 px-8 pt-52 pb-28 lg:grid-cols-2">
 
         <div>
-
           <p className="text-sm font-semibold uppercase tracking-[0.35em] text-[#8A9A7B]">
             About
           </p>
@@ -43,15 +51,12 @@ export default function ManufacturerPage() {
           <h2 className="mt-5 font-serif text-5xl leading-tight text-[#2B2B2B]">
             Designed for Commercial Interiors
           </h2>
-
         </div>
 
         <div>
-
           <p className="text-xl leading-10 text-[#555]">
             {manufacturer.description}
           </p>
-
         </div>
 
       </section>
