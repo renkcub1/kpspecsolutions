@@ -3,7 +3,7 @@ import nydreeHero from "../assets/Images/manufacturers/nydree/nydree-hero.webp";
 import nydreeLogoWhite from "../assets/manufacturers/nydree_logo_white.png";
 import everstepLogoWhiteBackground from "../assets/manufacturers/everstep_logo_white_background.png";
 import gmsLogoWhite from "../assets/manufacturers/gms_white_logo.png";
-import pssLogo from "../assets/manufacturers/pss_black_logo.png";
+import pssLogoWhite from "../assets/manufacturers/pss_white_logo.png";
 import tcgLogo from "../assets/manufacturers/tcg_logo.png";
 import buloLogo from "../assets/manufacturers/bulo_logo.png";
 import pointLogo from "../assets/manufacturers/point_logo.png";
@@ -57,7 +57,7 @@ export const manufacturers: Manufacturer[] = [
     description:
       "Innovative decorative wall systems for hospitality and commercial interiors.",
     website: "https://www.primesurfacesolutions.biz/",
-    logo: pssLogo,
+    logo: pssLogoWhite,
   },
 
   {
