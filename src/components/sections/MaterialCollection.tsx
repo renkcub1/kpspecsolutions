@@ -27,8 +27,8 @@ function MaterialCollection({
   reverse = false,
 }: MaterialCollectionProps) {
   return (
-    <section className={`py-36 ${reverse ? "bg-white" : "bg-[#F8F7F3]"}`}>
-      <div className="mx-auto max-w-[1550px] px-10 lg:px-20">
+    <section className={`py-16 sm:py-24 lg:py-36 ${reverse ? "bg-white" : "bg-[#F8F7F3]"}`}>
+      <div className="mx-auto max-w-[1550px] px-5 sm:px-8 lg:px-20">
         <div
           className={`grid items-center gap-20 lg:grid-cols-[1fr_1fr] ${
             reverse ? "lg:[&>*:first-child]:order-2" : ""
@@ -49,7 +49,9 @@ function MaterialCollection({
               src={image}
               alt={title}
               className="
-                h-[600px]
+                h-[340px]
+                sm:h-[460px]
+                lg:h-[600px]
                 w-full
                 object-cover
                 transition-all
@@ -83,7 +85,7 @@ function MaterialCollection({
               {collectionNumber}
             </p>
 
-            <h3 className="mt-5 font-serif text-[60px] leading-[0.94] text-[#2B2B2B]">
+            <h3 className="mt-5 font-serif text-4xl leading-[0.98] text-[#2B2B2B] sm:text-5xl lg:text-[60px]">
               {title}
             </h3>
 
