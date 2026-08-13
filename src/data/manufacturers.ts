@@ -2,7 +2,7 @@ import nydreeHero from "../assets/Images/manufacturers/nydree/nydree-hero.webp";
 
 import nydreeLogoWhite from "../assets/manufacturers/nydree_logo_white.png";
 import everstepLogoWhiteBackground from "../assets/manufacturers/everstep_logo_white_background.png";
-import gmsLogo from "../assets/manufacturers/gms_black_logo.png";
+import gmsLogoWhite from "../assets/manufacturers/gms_white_logo.png";
 import pssLogo from "../assets/manufacturers/pss_black_logo.png";
 import tcgLogo from "../assets/manufacturers/tcg_logo.png";
 import buloLogo from "../assets/manufacturers/bulo_logo.png";
@@ -47,7 +47,7 @@ export const manufacturers: Manufacturer[] = [
     description:
       "Sculptural architectural surfaces transforming commercial interiors.",
     website: "https://gilesmiller.com/",
-    logo: gmsLogo,
+    logo: gmsLogoWhite,
   },
 
   {
