@@ -9,10 +9,10 @@ function Home() {
   return (
     <main>
       <Hero />
+      <ManufacturerWall />
       <About />
       <Collections />
       <Resources />
-      <ManufacturerWall />
       <RequestPresentation />
     </main>
   );

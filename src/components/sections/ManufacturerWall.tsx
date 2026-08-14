@@ -1,38 +1,42 @@
-import nydreeLogo from "../../assets/manufacturers/nydree_logo_green.png";
-import everstepLogo from "../../assets/manufacturers/everstep_logo.png";
-import gmsLogo from "../../assets/manufacturers/gms_black_logo.png";
-import pssLogo from "../../assets/manufacturers/pss_black_logo.png";
-import tcgLogo from "../../assets/manufacturers/tcg_logo.png";
-import buloLogo from "../../assets/manufacturers/bulo_logo.png";
-import pointLogo from "../../assets/manufacturers/point_logo.png";
+import { manufacturers } from "../../data/manufacturers";
 
-const logos = [
-  nydreeLogo,
-  everstepLogo,
-  gmsLogo,
-  pssLogo,
-  tcgLogo,
-  buloLogo,
-  pointLogo,
-];
+function LogoGroup({ duplicate = false }: { duplicate?: boolean }) {
+  return (
+    <div className="manufacturer-marquee-group" aria-hidden={duplicate || undefined}>
+      {manufacturers.map((manufacturer) => (
+        <a
+          key={manufacturer.slug}
+          href={`/manufacturers/${manufacturer.slug}`}
+          tabIndex={duplicate ? -1 : undefined}
+          aria-label={duplicate ? undefined : `View ${manufacturer.name}`}
+          className="flex h-20 w-40 shrink-0 items-center justify-center rounded-2xl border border-[#E7E2D8] bg-[#FCFBF8] px-5 transition duration-300 hover:-translate-y-1 hover:shadow-lg focus-visible:-translate-y-1 focus-visible:shadow-lg sm:h-24 sm:w-52 sm:px-7"
+        >
+          <img
+            src={manufacturer.logo}
+            alt={duplicate ? "" : manufacturer.name}
+            className={`max-h-12 w-auto object-contain sm:max-h-14 ${
+              manufacturer.compactLogo ? "max-w-[8.875rem]" : "max-w-[10rem] sm:max-w-[12rem]"
+            }`}
+          />
+        </a>
+      ))}
+    </div>
+  );
+}
 
 function ManufacturerWall() {
   return (
-    <section className="bg-white py-36">
-      <div className="mx-auto max-w-[1550px] px-10 lg:px-20">
-        <div className="mt-24 grid grid-cols-2 gap-8 md:grid-cols-3 xl:grid-cols-4">
-          {logos.map((logo, index) => (
-            <div
-              key={index}
-              className="flex h-44 items-center justify-center rounded-[26px] border border-[#ECE7DE] bg-[#FCFBF8]"
-            >
-              <img
-                src={logo}
-                alt=""
-                className="max-h-16 max-w-[210px] object-contain"
-              />
-            </div>
-          ))}
+    <section
+      aria-labelledby="manufacturer-marquee-title"
+      className="overflow-hidden border-y border-[#E7E2D8] bg-white py-6 sm:py-8"
+    >
+      <h2 id="manufacturer-marquee-title" className="sr-only">
+        Featured manufacturers
+      </h2>
+      <div className="manufacturer-marquee">
+        <div className="manufacturer-marquee-track">
+          <LogoGroup />
+          <LogoGroup duplicate />
         </div>
       </div>
     </section>

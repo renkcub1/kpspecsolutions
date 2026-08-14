@@ -180,6 +180,62 @@ button {
 }
 
 /* ==========================================
+   MANUFACTURER MARQUEE
+========================================== */
+
+.manufacturer-marquee {
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
+
+.manufacturer-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: manufacturer-marquee 38s linear infinite;
+  will-change: transform;
+}
+
+.manufacturer-marquee-group {
+  display: flex;
+  flex-shrink: 0;
+  gap: 1rem;
+  padding-right: 1rem;
+}
+
+.manufacturer-marquee:hover .manufacturer-marquee-track,
+.manufacturer-marquee:focus-within .manufacturer-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes manufacturer-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .manufacturer-marquee {
+    overflow-x: auto;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+
+  .manufacturer-marquee-track {
+    animation: none !important;
+  }
+
+  .manufacturer-marquee-group[aria-hidden="true"] {
+    display: none;
+  }
+}
+
+/* ==========================================
    SECONDARY BUTTON
 ========================================== */
 
