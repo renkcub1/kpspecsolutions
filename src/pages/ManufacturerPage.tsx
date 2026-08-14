@@ -31,6 +31,7 @@ export default function ManufacturerPage() {
         description={manufacturer.description}
         heroImage={manufacturer.heroImage}
         logo={manufacturer.logo}
+        logoOnLight={manufacturer.logoOnLight}
       />
 
       <ManufacturerInfoCard

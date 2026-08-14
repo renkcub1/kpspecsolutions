@@ -4,6 +4,7 @@ interface ManufacturerHeroV2Props {
   description: string;
   heroImage?: string;
   logo?: string;
+  logoOnLight?: boolean;
 }
 
 export default function ManufacturerHeroV2({
@@ -12,6 +13,7 @@ export default function ManufacturerHeroV2({
   description,
   heroImage,
   logo,
+  logoOnLight = false,
 }: ManufacturerHeroV2Props) {
   return (
     <section className={`relative min-h-[620px] overflow-hidden sm:min-h-[680px] lg:h-[760px] ${heroImage ? "bg-[#2F3533]" : "bg-gradient-to-br from-[#27302d] via-[#3f4a44] to-[#8A9A7B]"}`}>
@@ -41,11 +43,13 @@ export default function ManufacturerHeroV2({
           </p>
 
           {logo ? (
-            <img
-              src={logo}
-              alt={name}
-              className="mt-5 max-h-24 w-[220px] max-w-full object-contain object-left sm:w-[260px] lg:w-[300px]"
-            />
+            <div className={logoOnLight ? "mt-5 inline-flex max-w-full rounded-2xl bg-white px-5 py-3 shadow-sm" : "mt-5"}>
+              <img
+                src={logo}
+                alt={name}
+                className="max-h-24 w-[220px] max-w-full object-contain object-left sm:w-[260px] lg:w-[300px]"
+              />
+            </div>
           ) : (
             <h1 className="mt-8 font-serif text-5xl text-white sm:text-7xl lg:text-8xl">
               {name}
