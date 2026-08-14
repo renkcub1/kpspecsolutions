@@ -4,7 +4,7 @@ import nydreeLogoWhite from "../assets/manufacturers/nydree_logo_white.png";
 import everstepLogoWhiteBackground from "../assets/manufacturers/everstep_logo_white_background.png";
 import gmsLogoWhite from "../assets/manufacturers/gms_white_logo.png";
 import pssLogoWhite from "../assets/manufacturers/pss_white_logo.png";
-import tcgLogo from "../assets/manufacturers/tcg_logo.png";
+import tcgLogoWhite from "../assets/manufacturers/tcg_logo_white.png";
 import buloLogo from "../assets/manufacturers/bulo_logo.png";
 import pointLogo from "../assets/manufacturers/point_logo.png";
 
@@ -67,7 +67,7 @@ export const manufacturers: Manufacturer[] = [
     description:
       "Decorative glass systems for healthcare, workplace and hospitality.",
     website: "https://tcgglass.com/",
-    logo: tcgLogo,
+    logo: tcgLogoWhite,
   },
 
   {
