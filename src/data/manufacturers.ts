@@ -17,6 +17,7 @@ export interface Manufacturer {
   heroImage?: string;
   logo?: string;
   logoOnLight?: boolean;
+  compactLogo?: boolean;
 }
 
 export const manufacturers: Manufacturer[] = [
@@ -63,6 +64,7 @@ export const manufacturers: Manufacturer[] = [
     website: "https://www.primesurfacesolutions.biz/",
     logo: pssLogoBlack,
     logoOnLight: true,
+    compactLogo: true,
   },
 
   {

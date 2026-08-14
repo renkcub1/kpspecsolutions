@@ -5,6 +5,7 @@ interface ManufacturerHeroV2Props {
   heroImage?: string;
   logo?: string;
   logoOnLight?: boolean;
+  compactLogo?: boolean;
 }
 
 export default function ManufacturerHeroV2({
@@ -14,6 +15,7 @@ export default function ManufacturerHeroV2({
   heroImage,
   logo,
   logoOnLight = false,
+  compactLogo = false,
 }: ManufacturerHeroV2Props) {
   return (
     <section className={`relative min-h-[620px] overflow-hidden sm:min-h-[680px] lg:h-[760px] ${heroImage ? "bg-[#2F3533]" : "bg-gradient-to-br from-[#27302d] via-[#3f4a44] to-[#8A9A7B]"}`}>
@@ -47,7 +49,7 @@ export default function ManufacturerHeroV2({
               <img
                 src={logo}
                 alt={name}
-                className="max-h-24 w-[220px] max-w-full object-contain object-left sm:w-[260px] lg:w-[300px]"
+                className={`max-h-24 max-w-full object-contain object-center ${compactLogo ? "w-[142px]" : "w-[220px] sm:w-[260px] lg:w-[300px]"}`}
               />
             </div>
           ) : (
