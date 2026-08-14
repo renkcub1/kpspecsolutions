@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import type { FormEvent } from "react";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { useSearchParams } from "react-router-dom";
 
 import { manufacturers } from "../data/manufacturers";
 
@@ -8,6 +9,10 @@ type FormStatus = "idle" | "submitting" | "success" | "error";
 
 function Contact() {
   const [status, setStatus] = useState<FormStatus>("idle");
+  const [searchParams] = useSearchParams();
+  const requestedAssistance = searchParams.get("request") === "presentation"
+    ? "Request a presentation"
+    : "";
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
@@ -120,7 +125,7 @@ function Contact() {
                 </div>
                 <div>
                   <label htmlFor="assistance" className={labelClass}>Type of Assistance *</label>
-                  <select id="assistance" name="assistance" defaultValue="" required className={fieldClass}>
+                  <select id="assistance" name="assistance" defaultValue={requestedAssistance} required className={fieldClass}>
                     <option value="" disabled>Select one</option>
                     <option>Request a presentation</option>
                     <option>Samples or literature</option>

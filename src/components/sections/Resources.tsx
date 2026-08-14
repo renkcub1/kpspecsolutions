@@ -265,7 +265,7 @@ function Resources() {
               here to support your project.
             </p>
             <a
-              href="#presentation"
+              href="/contact"
               style={{ color: "#FFFFFF" }}
               className="mt-7 inline-flex min-h-12 items-center rounded-full bg-[#91A27F] px-7 text-xs font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-[#7E906E] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#91A27F]"
             >

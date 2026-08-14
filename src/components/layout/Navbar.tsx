@@ -30,7 +30,7 @@ function Navbar() {
             ))}
           </ul>
           <div className="flex items-center gap-2 sm:gap-3">
-            <a href="/#presentation" className="hidden min-h-11 items-center rounded-full bg-[#8F9F7A] px-8 text-[11px] font-semibold uppercase tracking-[0.16em] text-white shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#798868] hover:shadow-xl xl:inline-flex">Request a Presentation</a>
+            <a href="/contact?request=presentation" className="hidden min-h-11 items-center rounded-full bg-[#8F9F7A] px-8 text-[11px] font-semibold uppercase tracking-[0.16em] text-white shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#798868] hover:shadow-xl xl:inline-flex">Request a Presentation</a>
             <button type="button" className="inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-[#D9D5CC] bg-white text-[#2B2B2B] shadow-sm transition hover:bg-[#F0EEE8] xl:hidden" aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"} aria-expanded={menuOpen} aria-controls="mobile-navigation" onClick={() => setMenuOpen((open) => !open)}>
               {menuOpen ? <X aria-hidden="true" className="size-6" strokeWidth={2.5} /> : <Menu aria-hidden="true" className="size-6" strokeWidth={2.5} />}
             </button>
@@ -39,7 +39,7 @@ function Navbar() {
         {menuOpen && (
           <div id="mobile-navigation" className="border-t border-[#E6E1D8] px-5 pb-6 pt-3 xl:hidden">
             <ul className="flex flex-col">{navItems.map((item) => <li key={item.label}><a href={item.href} onClick={() => setMenuOpen(false)} className="flex min-h-12 items-center border-b border-[#ECE7DE] text-sm font-semibold uppercase tracking-[0.14em] text-[#3D3D3D]">{item.label}</a></li>)}</ul>
-            <a href="/#presentation" onClick={() => setMenuOpen(false)} className="mt-5 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-[#8F9F7A] px-5 text-center text-xs font-semibold uppercase tracking-[0.16em] text-white">Request a Presentation</a>
+            <a href="/contact?request=presentation" onClick={() => setMenuOpen(false)} className="mt-5 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-[#8F9F7A] px-5 text-center text-xs font-semibold uppercase tracking-[0.16em] text-white">Request a Presentation</a>
           </div>
         )}
       </nav>

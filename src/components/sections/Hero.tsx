@@ -44,7 +44,7 @@ function Hero() {
             </a>
 
             <a
-              href="#presentation"
+              href="/contact?request=presentation"
               className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/40 bg-white/10 px-6 text-center text-xs font-semibold uppercase tracking-[0.16em] text-white backdrop-blur-md transition-all duration-300 hover:bg-white/20 sm:px-9 sm:text-sm sm:tracking-[0.20em]"
             >
               Request Presentation

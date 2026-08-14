@@ -24,7 +24,7 @@ function RequestPresentation() {
         </p>
 
         <div className="mt-14">
-          <a href="#contact" className="btn-primary">
+          <a href="/contact?request=presentation" className="btn-primary">
             Schedule a Presentation
           </a>
         </div>
