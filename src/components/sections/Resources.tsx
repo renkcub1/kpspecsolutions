@@ -82,7 +82,7 @@ const resourceCards = [
       "Review the 2026 TakTart collection, including performance features, pattern and color options, project applications, and panel dimensions.",
     logo: primeSurfaceLogo,
     logoAlt: "Prime Surface Solutions",
-    logoClassName: "max-w-[11.125rem] brightness-0",
+    logoClassName: "max-w-[8.875rem] brightness-0",
     primaryLabel: "View 2026 Catalog",
     primaryHref: pssCatalog,
     links: [],
