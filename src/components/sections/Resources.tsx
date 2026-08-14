@@ -1,6 +1,8 @@
 import nydreeLogo from "../../assets/manufacturers/nydree_logo_green.png";
 import everstepLogo from "../../assets/manufacturers/everstep_logo_white_background.png";
 import gilesMillerLogo from "../../assets/manufacturers/gms_black_logo.png";
+import primeSurfaceLogo from "../../assets/manufacturers/pss_black_logo.png";
+import pssCatalog from "../../assets/resources/pss-catalog-2026.pdf";
 
 const resourceCards = [
   {
@@ -72,6 +74,18 @@ const resourceCards = [
       },
     ],
   },
+  {
+    name: "Prime Surface Solutions",
+    category: "Textured Panels",
+    description:
+      "Review the 2026 TakTart collection, including performance features, pattern and color options, project applications, and panel dimensions.",
+    logo: primeSurfaceLogo,
+    logoAlt: "Prime Surface Solutions",
+    logoClassName: "max-w-[8.875rem]",
+    primaryLabel: "View 2026 Catalog",
+    primaryHref: pssCatalog,
+    links: [],
+  },
 ];
 
 function ExternalArrow() {
@@ -135,25 +149,27 @@ function ResourceCard({
         </a>
       </div>
 
-      <div className="border-t border-[#DED9CF] bg-[#FBFAF7] px-7 py-5 sm:px-10">
-        <p className="mb-3 text-[0.68rem] font-medium uppercase tracking-[0.24em] text-[#777]">
-          More from {name}
-        </p>
-        <div className="grid sm:grid-cols-3">
-          {links.map((resource) => (
-            <a
-              key={resource.label}
-              href={resource.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex min-h-12 items-center justify-between border-t border-[#E5E1D8] py-3 text-sm font-medium text-[#2B2B2B] transition hover:text-[#718060] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#91A27F] sm:border-l sm:border-t-0 sm:px-5 sm:first:border-l-0 sm:first:pl-0 sm:last:pr-0"
-            >
-              {resource.label}
-              <ExternalArrow />
-            </a>
-          ))}
+      {links.length > 0 && (
+        <div className="border-t border-[#DED9CF] bg-[#FBFAF7] px-7 py-5 sm:px-10">
+          <p className="mb-3 text-[0.68rem] font-medium uppercase tracking-[0.24em] text-[#777]">
+            More from {name}
+          </p>
+          <div className="grid sm:grid-cols-3">
+            {links.map((resource) => (
+              <a
+                key={resource.label}
+                href={resource.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex min-h-12 items-center justify-between border-t border-[#E5E1D8] py-3 text-sm font-medium text-[#2B2B2B] transition hover:text-[#718060] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#91A27F] sm:border-l sm:border-t-0 sm:px-5 sm:first:border-l-0 sm:first:pl-0 sm:last:pr-0"
+              >
+                {resource.label}
+                <ExternalArrow />
+              </a>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </article>
   );
 }
