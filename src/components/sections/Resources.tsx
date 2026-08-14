@@ -2,6 +2,7 @@ import nydreeLogo from "../../assets/manufacturers/nydree_logo_green.png";
 import everstepLogo from "../../assets/manufacturers/everstep_logo_white_background.png";
 import gilesMillerLogo from "../../assets/manufacturers/gms_black_logo.png";
 import primeSurfaceLogo from "../../assets/manufacturers/pss_white_logo.png";
+import tcgLogo from "../../assets/manufacturers/tcg_logo.png";
 import pssCatalog from "../../assets/resources/pss-catalog-2026.pdf";
 
 const resourceCards = [
@@ -85,6 +86,32 @@ const resourceCards = [
     primaryLabel: "View 2026 Catalog",
     primaryHref: pssCatalog,
     links: [],
+  },
+  {
+    name: "TCG Glass",
+    category: "Architectural Glass",
+    description:
+      "Access cast glass product literature, specification guidance, cleaning and maintenance instructions, and warranty information.",
+    logo: tcgLogo,
+    logoAlt: "TCG Glass",
+    logoClassName: "max-w-[16rem] sm:max-w-[20rem]",
+    primaryLabel: "Cast Glass Brochure",
+    primaryHref:
+      "https://irp.cdn-website.com/4217fa8e/files/uploaded/TCG_product_CastGlass_02-1.pdf",
+    links: [
+      {
+        label: "Specification Guide",
+        href: "https://irp.cdn-website.com/4217fa8e/files/uploaded/TCG_Cast_Glass_Specification_Guide.docx",
+      },
+      {
+        label: "Care & Maintenance",
+        href: "https://irp.cdn-website.com/4217fa8e/files/uploaded/TCG_-_Glass_Cleaning_and_Maintenance-8f3f3847.pdf",
+      },
+      {
+        label: "Warranty",
+        href: "https://irp.cdn-website.com/4217fa8e/files/uploaded/TCG_LIMITED_Glass_Warranty-97ff1c2d.pdf",
+      },
+    ],
   },
 ];
 
