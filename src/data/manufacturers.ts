@@ -39,6 +39,7 @@ export const manufacturers: Manufacturer[] = [
       "Premium commercial luxury vinyl flooring engineered for durability and performance.",
     website: "https://www.everstepflooring.com/",
     logo: everstepLogoWhiteBackground,
+    logoOnLight: true,
   },
 
   {
