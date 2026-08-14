@@ -1,7 +1,7 @@
 import nydreeLogo from "../../assets/manufacturers/nydree_logo_green.png";
 import everstepLogo from "../../assets/manufacturers/everstep_logo_white_background.png";
 import gilesMillerLogo from "../../assets/manufacturers/gms_black_logo.png";
-import primeSurfaceLogo from "../../assets/manufacturers/pss_white_logo.png";
+import primeSurfaceLogo from "../../assets/manufacturers/pss_black_logo.png";
 import tcgLogo from "../../assets/manufacturers/tcg_logo.png";
 import pssCatalog from "../../assets/resources/pss-catalog-2026.pdf";
 
@@ -82,7 +82,7 @@ const resourceCards = [
       "Review the 2026 TakTart collection, including performance features, pattern and color options, project applications, and panel dimensions.",
     logo: primeSurfaceLogo,
     logoAlt: "Prime Surface Solutions",
-    logoClassName: "max-w-[8.875rem] brightness-0",
+    logoClassName: "max-w-[8.875rem]",
     primaryLabel: "View 2026 Catalog",
     primaryHref: pssCatalog,
     links: [],
