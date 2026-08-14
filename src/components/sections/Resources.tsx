@@ -52,6 +52,7 @@ function Resources() {
             </p>
             <a
               href="#presentation"
+              style={{ color: "#FFFFFF" }}
               className="mt-7 inline-flex min-h-12 items-center rounded-full bg-[#91A27F] px-7 text-xs font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-[#7E906E] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#91A27F]"
             >
               Request Assistance
@@ -85,6 +86,7 @@ function Resources() {
                 href="https://nydreeflooring.com/pages/resources"
                 target="_blank"
                 rel="noopener noreferrer"
+                style={{ color: "#FFFFFF" }}
                 className="mt-7 flex min-h-14 w-full items-center justify-between rounded-full bg-[#2F3834] px-6 text-xs font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#222A27] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2F3834] sm:w-auto sm:min-w-80"
               >
                 Technical Specifications
