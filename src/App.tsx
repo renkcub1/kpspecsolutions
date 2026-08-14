@@ -5,6 +5,7 @@ import Footer from "./components/layout/Footer";
 
 import Home from "./pages/Home";
 import ManufacturerPage from "./pages/ManufacturerPage";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
         <Route
           path="/manufacturers/:slug"
           element={<ManufacturerPage />}

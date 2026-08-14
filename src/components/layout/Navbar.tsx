@@ -9,7 +9,7 @@ function Navbar() {
     { label: "About", href: "/#about" },
     { label: "Material Collections", href: "/#collections" },
     { label: "Resources", href: "/#resources" },
-    { label: "Contact", href: "/#contact" },
+    { label: "Contact", href: "/contact" },
   ];
 
   useEffect(() => {
