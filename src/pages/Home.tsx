@@ -9,8 +9,8 @@ function Home() {
   return (
     <main>
       <Hero />
-      <ManufacturerWall />
       <About />
+      <ManufacturerWall />
       <Collections />
       <Resources />
       <RequestPresentation />

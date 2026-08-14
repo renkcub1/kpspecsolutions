@@ -193,7 +193,7 @@ button {
 .manufacturer-marquee-track {
   display: flex;
   width: max-content;
-  animation: manufacturer-marquee 52s linear infinite;
+  animation: manufacturer-marquee 46s linear infinite;
   will-change: transform;
 }
 
@@ -201,16 +201,15 @@ button {
   display: flex;
   flex-shrink: 0;
   gap: 3rem;
-  padding-right: 3rem;
 }
 
 @keyframes manufacturer-marquee {
   from {
-    transform: translateX(0);
+    transform: translateX(100vw);
   }
 
   to {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 }
 
@@ -223,10 +222,6 @@ button {
 
   .manufacturer-marquee-track {
     animation: none !important;
-  }
-
-  .manufacturer-marquee-group[aria-hidden="true"] {
-    display: none;
   }
 }
 
