@@ -4,21 +4,18 @@ function LogoGroup({ duplicate = false }: { duplicate?: boolean }) {
   return (
     <div className="manufacturer-marquee-group" aria-hidden={duplicate || undefined}>
       {manufacturers.map((manufacturer) => (
-        <a
+        <div
           key={manufacturer.slug}
-          href={`/manufacturers/${manufacturer.slug}`}
-          tabIndex={duplicate ? -1 : undefined}
-          aria-label={duplicate ? undefined : `View ${manufacturer.name}`}
-          className="flex h-20 w-40 shrink-0 items-center justify-center rounded-2xl border border-[#E7E2D8] bg-[#FCFBF8] px-5 transition duration-300 hover:-translate-y-1 hover:shadow-lg focus-visible:-translate-y-1 focus-visible:shadow-lg sm:h-24 sm:w-52 sm:px-7"
+          className="flex h-24 w-52 shrink-0 items-center justify-center rounded-2xl border border-[#E7E2D8] bg-[#FCFBF8] px-7 sm:h-28 sm:w-72 sm:px-10"
         >
           <img
             src={manufacturer.logo}
             alt={duplicate ? "" : manufacturer.name}
-            className={`max-h-12 w-auto object-contain sm:max-h-14 ${
-              manufacturer.compactLogo ? "max-w-[8.875rem]" : "max-w-[10rem] sm:max-w-[12rem]"
+            className={`max-h-14 w-auto object-contain sm:max-h-16 ${
+              manufacturer.compactLogo ? "max-w-[8.875rem]" : "max-w-[11rem] sm:max-w-[14rem]"
             }`}
           />
-        </a>
+        </div>
       ))}
     </div>
   );

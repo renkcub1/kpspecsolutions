@@ -193,20 +193,15 @@ button {
 .manufacturer-marquee-track {
   display: flex;
   width: max-content;
-  animation: manufacturer-marquee 38s linear infinite;
+  animation: manufacturer-marquee 52s linear infinite;
   will-change: transform;
 }
 
 .manufacturer-marquee-group {
   display: flex;
   flex-shrink: 0;
-  gap: 1rem;
-  padding-right: 1rem;
-}
-
-.manufacturer-marquee:hover .manufacturer-marquee-track,
-.manufacturer-marquee:focus-within .manufacturer-marquee-track {
-  animation-play-state: paused;
+  gap: 3rem;
+  padding-right: 3rem;
 }
 
 @keyframes manufacturer-marquee {
