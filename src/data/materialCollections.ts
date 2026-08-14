@@ -21,7 +21,6 @@ export const materialCollections = [
     image: flooringImage,
     description:
       "Beautiful commercial flooring solutions combining the warmth of natural wood with the durability today's commercial environments require.",
-    buttonText: "Explore Flooring",
     manufacturers: [
       {
         name: "Nydree",
@@ -47,7 +46,6 @@ export const materialCollections = [
     image: artImage,
     description:
       "Architectural wall systems, sculptural installations, and dimensional surfaces that transform commercial interiors into memorable environments.",
-    buttonText: "Explore Architectural Art",
     manufacturers: [
       {
         name: "Giles Miller Studio",
@@ -73,7 +71,6 @@ export const materialCollections = [
     image: glassImage,
     description:
       "Decorative architectural glass systems designed for healthcare, hospitality, workplace, and commercial environments.",
-    buttonText: "Explore Glass",
     manufacturers: [
       {
         name: "TCG Glass",
@@ -92,7 +89,6 @@ export const materialCollections = [
     image: furnitureImage,
     description:
       "European-inspired commercial furniture blending comfort, craftsmanship, and timeless design.",
-    buttonText: "Explore Furniture",
     manufacturers: [
       {
         name: "Bulo",
@@ -111,7 +107,6 @@ export const materialCollections = [
     image: outdoorImage,
     description:
       "Luxury outdoor furnishings designed for hospitality, multifamily, and commercial gathering spaces.",
-    buttonText: "Explore Outdoor",
     manufacturers: [
       {
         name: "POINT",

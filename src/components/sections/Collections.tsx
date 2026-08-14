@@ -15,7 +15,6 @@ function Collections() {
           title={collection.title}
           description={collection.description}
           manufacturers={collection.manufacturers}
-          buttonText={collection.buttonText}
           reverse={index % 2 !== 0}
         />
       ))}

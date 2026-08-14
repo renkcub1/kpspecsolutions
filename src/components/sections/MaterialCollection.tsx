@@ -13,7 +13,6 @@ interface MaterialCollectionProps {
   title: string;
   description: string;
   manufacturers: Manufacturer[];
-  buttonText: string;
   reverse?: boolean;
 }
 
@@ -23,14 +22,13 @@ function MaterialCollection({
   title,
   description,
   manufacturers,
-  buttonText,
   reverse = false,
 }: MaterialCollectionProps) {
   return (
-    <section className={`py-16 sm:py-24 lg:py-36 ${reverse ? "bg-white" : "bg-[#F8F7F3]"}`}>
+    <section className={`py-12 sm:py-20 lg:py-36 ${reverse ? "bg-white" : "bg-[#F8F7F3]"}`}>
       <div className="mx-auto max-w-[1550px] px-5 sm:px-8 lg:px-20">
         <div
-          className={`grid items-center gap-20 lg:grid-cols-[1fr_1fr] ${
+          className={`grid items-center gap-10 sm:gap-16 lg:grid-cols-[1fr_1fr] lg:gap-20 ${
             reverse ? "lg:[&>*:first-child]:order-2" : ""
           }`}
         >
@@ -106,37 +104,6 @@ function MaterialCollection({
                   manufacturer={manufacturer}
                 />
               ))}
-            </div>
-
-            <div className="mt-14">
-              <button
-                className="
-                  group
-                  inline-flex
-                  items-center
-                  gap-3
-                  rounded-full
-                  border
-                  border-[#8A9A7B]
-                  px-9
-                  py-4
-                  text-sm
-                  font-semibold
-                  uppercase
-                  tracking-[0.20em]
-                  text-[#2B2B2B]
-                  transition-all
-                  duration-300
-                  hover:bg-[#8A9A7B]
-                  hover:text-white
-                "
-              >
-                {buttonText}
-
-                <span className="transition-transform duration-300 group-hover:translate-x-1">
-                  →
-                </span>
-              </button>
             </div>
           </div>
         </div>
