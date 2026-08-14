@@ -1,17 +1,50 @@
 import nydreeLogo from "../../assets/manufacturers/nydree_logo_green.png";
+import everstepLogo from "../../assets/manufacturers/everstep_logo_white_background.png";
 
-const nydreeResources = [
+const resourceCards = [
   {
-    label: "Certifications",
-    href: "https://nydreeflooring.com/pages/industry-affiliations-and-certifications",
+    name: "Nydree",
+    category: "Wood & Performance Flooring",
+    description:
+      "Find technical specifications and supporting documentation for Nydree's acrylic-infused hardwood flooring systems.",
+    logo: nydreeLogo,
+    logoAlt: "Nydree Flooring",
+    logoClassName: "max-w-[15rem] sm:max-w-[18rem]",
+    primaryLabel: "Technical Specifications",
+    primaryHref: "https://nydreeflooring.com/pages/resources",
+    links: [
+      {
+        label: "Certifications",
+        href: "https://nydreeflooring.com/pages/industry-affiliations-and-certifications",
+      },
+      { label: "Sustainability", href: "https://nydreeflooring.com/pages/sustainability" },
+      { label: "CEU Courses", href: "https://nydreeflooring.com/pages/ceu-presentation-request" },
+    ],
   },
   {
-    label: "Sustainability",
-    href: "https://nydreeflooring.com/pages/sustainability",
-  },
-  {
-    label: "CEU Courses",
-    href: "https://nydreeflooring.com/pages/ceu-presentation-request",
+    name: "EverStep",
+    category: "Luxury Vinyl Tile",
+    description:
+      "Access specifications, installation instructions, maintenance guidance, warranties, adhesives, and product literature for EverStep flooring.",
+    logo: everstepLogo,
+    logoAlt: "EverStep Flooring",
+    logoClassName: "max-w-[17rem] sm:max-w-[21rem]",
+    primaryLabel: "Technical Library",
+    primaryHref: "https://www.everstepflooring.com/technical/",
+    links: [
+      {
+        label: "Warranty",
+        href: "https://www.everstepflooring.com/wp-content/uploads/2024/08/8-9-24-EVERSTEP-LIMITED-COMMERCIAL-WARRANTIES-1.pdf",
+      },
+      {
+        label: "Care & Maintenance",
+        href: "https://www.everstepflooring.com/technical/lvp-care-and-maintenance/",
+      },
+      {
+        label: "Installation",
+        href: "https://www.everstepflooring.com/wp-content/uploads/2022/10/vinylplk_instructions_residential.pdf",
+      },
+    ],
   },
 ];
 
@@ -27,6 +60,75 @@ function ExternalArrow() {
     >
       <path strokeLinecap="round" strokeLinejoin="round" d="M7 17 17 7M8 7h9v9" />
     </svg>
+  );
+}
+
+type ResourceCardProps = (typeof resourceCards)[number];
+
+function ResourceCard({
+  name,
+  category,
+  description,
+  logo,
+  logoAlt,
+  logoClassName,
+  primaryLabel,
+  primaryHref,
+  links,
+}: ResourceCardProps) {
+  return (
+    <article className="overflow-hidden rounded-[2rem] border border-[#DED9CF] bg-white shadow-[0_24px_60px_rgba(43,43,43,0.08)]">
+      <div className="p-7 sm:p-10">
+        <div className="flex min-h-28 items-center justify-center rounded-2xl bg-[#F7F6F2] px-8 py-7 sm:min-h-36">
+          <img
+            src={logo}
+            alt={logoAlt}
+            className={`h-auto w-full object-contain ${logoClassName}`}
+          />
+        </div>
+
+        <div className="mt-7">
+          <p className="text-xs font-medium uppercase tracking-[0.28em] text-[#91A27F]">
+            {category}
+          </p>
+          <h3 className="mt-3 font-serif text-3xl text-[#2B2B2B] sm:text-4xl">{name}</h3>
+          <p className="mt-3 max-w-2xl text-sm leading-6 text-[#666] sm:text-base sm:leading-7">
+            {description}
+          </p>
+        </div>
+
+        <a
+          href={primaryHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: "#FFFFFF" }}
+          className="mt-7 flex min-h-14 w-full items-center justify-between rounded-full bg-[#2F3834] px-6 text-xs font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#222A27] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2F3834] sm:w-auto sm:min-w-80"
+        >
+          {primaryLabel}
+          <ExternalArrow />
+        </a>
+      </div>
+
+      <div className="border-t border-[#DED9CF] bg-[#FBFAF7] px-7 py-5 sm:px-10">
+        <p className="mb-3 text-[0.68rem] font-medium uppercase tracking-[0.24em] text-[#777]">
+          More from {name}
+        </p>
+        <div className="grid sm:grid-cols-3">
+          {links.map((resource) => (
+            <a
+              key={resource.label}
+              href={resource.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex min-h-12 items-center justify-between border-t border-[#E5E1D8] py-3 text-sm font-medium text-[#2B2B2B] transition hover:text-[#718060] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#91A27F] sm:border-l sm:border-t-0 sm:px-5 sm:first:border-l-0 sm:first:pl-0 sm:last:pr-0"
+            >
+              {resource.label}
+              <ExternalArrow />
+            </a>
+          ))}
+        </div>
+      </div>
+    </article>
   );
 }
 
@@ -59,61 +161,11 @@ function Resources() {
             </a>
           </div>
 
-          <article className="overflow-hidden rounded-[2rem] border border-[#DED9CF] bg-white shadow-[0_24px_60px_rgba(43,43,43,0.08)]">
-            <div className="p-7 sm:p-10">
-              <div className="flex min-h-28 items-center justify-center rounded-2xl bg-[#F7F6F2] px-8 py-7 sm:min-h-36">
-                <img
-                  src={nydreeLogo}
-                  alt="Nydree Flooring"
-                  className="h-auto w-full max-w-[15rem] object-contain sm:max-w-[18rem]"
-                />
-              </div>
-
-              <div className="mt-7">
-                <p className="text-xs font-medium uppercase tracking-[0.28em] text-[#91A27F]">
-                  Wood &amp; Performance Flooring
-                </p>
-                <h3 className="mt-3 font-serif text-3xl text-[#2B2B2B] sm:text-4xl">
-                  Nydree
-                </h3>
-                <p className="mt-3 max-w-2xl text-sm leading-6 text-[#666] sm:text-base sm:leading-7">
-                  Find technical specifications and supporting documentation for Nydree's
-                  acrylic-infused hardwood flooring systems.
-                </p>
-              </div>
-
-              <a
-                href="https://nydreeflooring.com/pages/resources"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: "#FFFFFF" }}
-                className="mt-7 flex min-h-14 w-full items-center justify-between rounded-full bg-[#2F3834] px-6 text-xs font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#222A27] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2F3834] sm:w-auto sm:min-w-80"
-              >
-                Technical Specifications
-                <ExternalArrow />
-              </a>
-            </div>
-
-            <div className="border-t border-[#DED9CF] bg-[#FBFAF7] px-7 py-5 sm:px-10">
-              <p className="mb-3 text-[0.68rem] font-medium uppercase tracking-[0.24em] text-[#777]">
-                More from Nydree
-              </p>
-              <div className="grid sm:grid-cols-3">
-                {nydreeResources.map((resource) => (
-                  <a
-                    key={resource.label}
-                    href={resource.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex min-h-12 items-center justify-between border-t border-[#E5E1D8] py-3 text-sm font-medium text-[#2B2B2B] transition hover:text-[#718060] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#91A27F] sm:border-l sm:border-t-0 sm:px-5 sm:first:border-l-0 sm:first:pl-0 sm:last:pr-0"
-                  >
-                    {resource.label}
-                    <ExternalArrow />
-                  </a>
-                ))}
-              </div>
-            </div>
-          </article>
+          <div className="space-y-8">
+            {resourceCards.map((card) => (
+              <ResourceCard key={card.name} {...card} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
