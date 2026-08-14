@@ -4,6 +4,7 @@ import gilesMillerLogo from "../../assets/manufacturers/gms_black_logo.png";
 import primeSurfaceLogo from "../../assets/manufacturers/pss_black_logo.png";
 import tcgLogo from "../../assets/manufacturers/tcg_logo.png";
 import buloLogo from "../../assets/manufacturers/bulo_logo_hero.png";
+import pointLogo from "../../assets/manufacturers/point_logo.png";
 import pssCatalog from "../../assets/resources/pss-catalog-2026.pdf";
 
 const resourceCards = [
@@ -128,6 +129,31 @@ const resourceCards = [
       { label: "Seating", href: "https://bulo.com/catalog/?cat=4" },
       { label: "Tables", href: "https://bulo.com/catalog/?cat=73" },
       { label: "Storage", href: "https://bulo.com/catalog/?cat=7" },
+    ],
+  },
+  {
+    name: "POINT",
+    category: "Outdoor Living",
+    description:
+      "Access technical data, design files, material and finish references, and maintenance guidance for POINT's outdoor furniture collections.",
+    logo: pointLogo,
+    logoAlt: "POINT",
+    logoClassName: "max-w-[14rem] sm:max-w-[17rem]",
+    primaryLabel: "Product Data Sheets",
+    primaryHref: "https://pointsl.box.com/s/fsphj3qi6jth1pa6gh42h3h2c85n9ch7",
+    links: [
+      {
+        label: "2D / 3D Files",
+        href: "https://pointsl.box.com/s/c3vmhw1r596te3rxkko4md2t1rfbmxit",
+      },
+      {
+        label: "Maintenance",
+        href: "https://pointsl.box.com/s/j368sqo7pstf9g3cida6cubctt19xma8",
+      },
+      {
+        label: "Textures Catalogue",
+        href: "https://pointsl.box.com/s/v3jkrs3f3jt1vgvmzmb2e8bobmku95xz",
+      },
     ],
   },
 ];
