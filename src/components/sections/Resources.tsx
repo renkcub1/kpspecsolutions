@@ -3,6 +3,7 @@ import everstepLogo from "../../assets/manufacturers/everstep_logo_white_backgro
 import gilesMillerLogo from "../../assets/manufacturers/gms_black_logo.png";
 import primeSurfaceLogo from "../../assets/manufacturers/pss_black_logo.png";
 import tcgLogo from "../../assets/manufacturers/tcg_logo.png";
+import buloLogo from "../../assets/manufacturers/bulo_logo_hero.png";
 import pssCatalog from "../../assets/resources/pss-catalog-2026.pdf";
 
 const resourceCards = [
@@ -111,6 +112,22 @@ const resourceCards = [
         label: "Warranty",
         href: "https://irp.cdn-website.com/4217fa8e/files/uploaded/TCG_LIMITED_Glass_Warranty-97ff1c2d.pdf",
       },
+    ],
+  },
+  {
+    name: "Bulo",
+    category: "Commercial Furniture",
+    description:
+      "Browse Bulo's commercial furniture portfolio and access product sheets, 3D files, Revit files, configurators, and manuals by product.",
+    logo: buloLogo,
+    logoAlt: "Bulo",
+    logoClassName: "max-w-[13rem] sm:max-w-[16rem]",
+    primaryLabel: "Browse Product Resources",
+    primaryHref: "https://bulo.com/catalog/",
+    links: [
+      { label: "Seating", href: "https://bulo.com/catalog/?cat=4" },
+      { label: "Tables", href: "https://bulo.com/catalog/?cat=73" },
+      { label: "Storage", href: "https://bulo.com/catalog/?cat=7" },
     ],
   },
 ];
