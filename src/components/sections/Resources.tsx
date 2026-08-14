@@ -1,5 +1,6 @@
 import nydreeLogo from "../../assets/manufacturers/nydree_logo_green.png";
 import everstepLogo from "../../assets/manufacturers/everstep_logo_white_background.png";
+import gilesMillerLogo from "../../assets/manufacturers/gms_black_logo.png";
 
 const resourceCards = [
   {
@@ -43,6 +44,31 @@ const resourceCards = [
       {
         label: "Installation",
         href: "https://www.everstepflooring.com/wp-content/uploads/2022/10/vinylplk_instructions_residential.pdf",
+      },
+    ],
+  },
+  {
+    name: "Giles Miller Studio",
+    category: "Architectural Art",
+    description:
+      "Explore studio brochures, surface portfolios, material inspiration, and guidance for cleaning, maintenance, recycling, and reclamation.",
+    logo: gilesMillerLogo,
+    logoAlt: "Giles Miller Studio",
+    logoClassName: "max-w-[14rem] sm:max-w-[17rem]",
+    primaryLabel: "Resource Downloads",
+    primaryHref: "https://gilesmiller.com/contact/",
+    links: [
+      {
+        label: "Brochure",
+        href: "https://gilesmiller.com/app/uploads/2026/05/GMS_Brochure.pdf",
+      },
+      {
+        label: "Surface Portfolio",
+        href: "https://gilesmiller.com/app/uploads/2026/05/GMS_Surface_Portfolio.pdf",
+      },
+      {
+        label: "Care & Maintenance",
+        href: "https://gilesmiller.com/app/uploads/2026/05/GMS_Cleaning_Maintenance_Recycling_Reclamation.pdf",
       },
     ],
   },
