@@ -55,16 +55,16 @@ const resourceCards = [
     logo: gilesMillerLogo,
     logoAlt: "Giles Miller Studio",
     logoClassName: "max-w-[14rem] sm:max-w-[17rem]",
-    primaryLabel: "Resource Downloads",
-    primaryHref: "https://gilesmiller.com/contact/",
+    primaryLabel: "Download Brochure",
+    primaryHref: "https://gilesmiller.com/app/uploads/2026/05/GMS_Brochure.pdf",
     links: [
-      {
-        label: "Brochure",
-        href: "https://gilesmiller.com/app/uploads/2026/05/GMS_Brochure.pdf",
-      },
       {
         label: "Surface Portfolio",
         href: "https://gilesmiller.com/app/uploads/2026/05/GMS_Surface_Portfolio.pdf",
+      },
+      {
+        label: "Sculpture Portfolio",
+        href: "https://gilesmiller.com/app/uploads/2026/05/GMS_Sculpture_Portfolio.pdf",
       },
       {
         label: "Care & Maintenance",
