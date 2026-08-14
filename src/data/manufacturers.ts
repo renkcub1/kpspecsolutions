@@ -1,9 +1,9 @@
 import nydreeHero from "../assets/Images/manufacturers/nydree/nydree-hero.webp";
 
-import nydreeLogoWhite from "../assets/manufacturers/nydree_logo_white.png";
+import nydreeLogoGreen from "../assets/manufacturers/nydree_logo_green.png";
 import everstepLogoWhiteBackground from "../assets/manufacturers/everstep_logo_white_background.png";
-import gmsLogoWhite from "../assets/manufacturers/gms_white_logo.png";
-import pssLogoWhite from "../assets/manufacturers/pss_white_logo.png";
+import gmsLogoBlack from "../assets/manufacturers/gms_black_logo.png";
+import pssLogoBlack from "../assets/manufacturers/pss_black_logo.png";
 import tcgLogo from "../assets/manufacturers/tcg_logo.png";
 import buloHeroLogo from "../assets/manufacturers/bulo_logo_hero.png";
 import pointLogo from "../assets/manufacturers/point_logo.png";
@@ -28,7 +28,8 @@ export const manufacturers: Manufacturer[] = [
       "Beautiful commercial flooring solutions combining the warmth of natural wood with the durability today's commercial environments require.",
     website: "https://www.nydreeflooring.com/",
     heroImage: nydreeHero,
-    logo: nydreeLogoWhite,
+    logo: nydreeLogoGreen,
+    logoOnLight: true,
   },
 
   {
@@ -49,7 +50,8 @@ export const manufacturers: Manufacturer[] = [
     description:
       "Sculptural architectural surfaces transforming commercial interiors.",
     website: "https://gilesmiller.com/",
-    logo: gmsLogoWhite,
+    logo: gmsLogoBlack,
+    logoOnLight: true,
   },
 
   {
@@ -59,7 +61,8 @@ export const manufacturers: Manufacturer[] = [
     description:
       "Innovative decorative wall systems for hospitality and commercial interiors.",
     website: "https://www.primesurfacesolutions.biz/",
-    logo: pssLogoWhite,
+    logo: pssLogoBlack,
+    logoOnLight: true,
   },
 
   {
@@ -92,5 +95,6 @@ export const manufacturers: Manufacturer[] = [
       "Luxury outdoor furnishings for commercial hospitality environments.",
     website: "https://www.point1920.com/",
     logo: pointLogo,
+    logoOnLight: true,
   },
 ];
