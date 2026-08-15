@@ -28,7 +28,7 @@ export default function ManufacturerHeroV2({
           <img
             src={heroImage}
             alt={name}
-            className={`absolute inset-0 h-full w-full object-cover transition-transform duration-700 ${heroFocus === "floor" ? "origin-bottom scale-[1.3] object-bottom sm:scale-[1.2] lg:scale-[1.12]" : "object-center"}`}
+            className={`absolute inset-0 h-full w-full object-cover transition-transform duration-700 ${heroFocus === "floor" ? "origin-bottom scale-[1.5] object-bottom sm:scale-[1.32] lg:scale-[1.2]" : "object-center"}`}
           />
 
           <div className="absolute inset-0 bg-black/40" />
