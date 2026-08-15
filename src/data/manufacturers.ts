@@ -4,7 +4,9 @@ import everstepHeroDesktop from "../assets/Images/manufacturers/everstep/everste
 import gilesMillerHeroPoster from "../assets/Images/manufacturers/giles-miller/giles-miller-hero-poster.webp";
 import pssHero from "../assets/Images/manufacturers/prime-surface-solutions/pss-hero.webp";
 import pssHeroDesktop from "../assets/Images/manufacturers/prime-surface-solutions/pss-hero-desktop.webp";
+import tcgHeroPoster from "../assets/Images/manufacturers/tcg-glass/tcg-hero-poster.webp";
 import gilesMillerHeroVideo from "../assets/manufacturers/giles-miller-hero-web.mp4";
+import tcgHeroVideo from "../assets/manufacturers/tcg-hero-web.mp4";
 
 import nydreeLogoGreen from "../assets/manufacturers/nydree_logo_green.png";
 import everstepLogoWhiteBackground from "../assets/manufacturers/everstep_logo_white_background.png";
@@ -92,6 +94,8 @@ export const manufacturers: Manufacturer[] = [
     description:
       "Decorative glass systems for healthcare, workplace and hospitality.",
     website: "https://tcgglass.com/",
+    heroImage: tcgHeroPoster,
+    heroVideo: tcgHeroVideo,
     logo: tcgLogo,
     logoOnLight: true,
   },
