@@ -29,7 +29,7 @@ export default function ManufacturerHeroV2({
             src={heroImage}
             alt={name}
             style={heroFocus === "floor" ? { objectPosition: "center bottom" } : undefined}
-            className={`absolute inset-0 h-full w-full object-cover transition-transform duration-700 ${heroFocus === "floor" ? "origin-bottom scale-[1.5] object-bottom sm:scale-[1.32] lg:scale-100" : "object-center"}`}
+            className={`absolute inset-0 h-full w-full object-cover transition-transform duration-700 ${heroFocus === "floor" ? "origin-bottom scale-[1.5] object-bottom sm:scale-[1.32] lg:inset-x-0 lg:bottom-0 lg:top-auto lg:h-auto lg:min-h-full lg:scale-100" : "object-center"}`}
           />
 
           <div className="absolute inset-0 bg-black/40" />
