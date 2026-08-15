@@ -6,9 +6,11 @@ import pssHero from "../assets/Images/manufacturers/prime-surface-solutions/pss-
 import pssHeroDesktop from "../assets/Images/manufacturers/prime-surface-solutions/pss-hero-desktop.webp";
 import tcgHeroPoster from "../assets/Images/manufacturers/tcg-glass/tcg-hero-poster.webp";
 import buloHeroPoster from "../assets/Images/manufacturers/bulo/bulo-hero-poster.webp";
+import pointHeroPoster from "../assets/Images/manufacturers/point/point-hero-poster.webp";
 import gilesMillerHeroVideo from "../assets/manufacturers/giles-miller-hero-web.mp4";
 import tcgHeroVideo from "../assets/manufacturers/tcg-hero-web.mp4";
 import buloHeroVideo from "../assets/manufacturers/bulo-hero-web.mp4";
+import pointHeroVideo from "../assets/manufacturers/point-hero-web.mp4";
 
 import nydreeLogoGreen from "../assets/manufacturers/nydree_logo_green.png";
 import everstepLogoWhiteBackground from "../assets/manufacturers/everstep_logo_white_background.png";
@@ -122,6 +124,8 @@ export const manufacturers: Manufacturer[] = [
     description:
       "Luxury outdoor furnishings for commercial hospitality environments.",
     website: "https://www.point1920.com/",
+    heroImage: pointHeroPoster,
+    heroVideo: pointHeroVideo,
     logo: pointLogo,
     logoOnLight: true,
   },
