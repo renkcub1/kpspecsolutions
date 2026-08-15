@@ -19,7 +19,7 @@ export interface Manufacturer {
   logo?: string;
   logoOnLight?: boolean;
   compactLogo?: boolean;
-  heroFocus?: "floor";
+  heroFocus?: "floor" | "full";
 }
 
 export const manufacturers: Manufacturer[] = [
@@ -44,7 +44,7 @@ export const manufacturers: Manufacturer[] = [
       "Premium commercial luxury vinyl flooring engineered for durability and performance.",
     website: "https://www.everstepflooring.com/",
     heroImage: everstepHero,
-    heroFocus: "floor",
+    heroFocus: "full",
     logo: everstepLogoWhiteBackground,
     logoOnLight: true,
   },

@@ -6,7 +6,7 @@ interface ManufacturerHeroV2Props {
   logo?: string;
   logoOnLight?: boolean;
   compactLogo?: boolean;
-  heroFocus?: "floor";
+  heroFocus?: "floor" | "full";
 }
 
 export default function ManufacturerHeroV2({
@@ -29,8 +29,17 @@ export default function ManufacturerHeroV2({
             src={heroImage}
             alt={name}
             style={heroFocus === "floor" ? { objectPosition: "center bottom" } : undefined}
-            className={`absolute inset-0 h-full w-full object-cover transition-transform duration-700 ${heroFocus === "floor" ? "origin-bottom scale-[1.5] object-bottom sm:scale-[1.32] lg:inset-x-0 lg:bottom-0 lg:top-auto lg:h-auto lg:min-h-full lg:scale-100" : "object-center"}`}
+            className={`absolute inset-0 h-full w-full object-cover transition-transform duration-700 ${heroFocus === "floor" ? "origin-bottom scale-[1.5] object-bottom sm:scale-[1.32] lg:inset-x-0 lg:bottom-0 lg:top-auto lg:h-auto lg:min-h-full lg:scale-100" : heroFocus === "full" ? "object-center lg:scale-105 lg:opacity-60 lg:blur-xl" : "object-center"}`}
           />
+
+          {heroFocus === "full" && (
+            <img
+              src={heroImage}
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 hidden h-full w-full object-contain object-center lg:block"
+            />
+          )}
 
           <div className="absolute inset-0 bg-black/40" />
 
