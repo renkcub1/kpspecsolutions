@@ -2,6 +2,7 @@ import nydreeHero from "../assets/Images/manufacturers/nydree/nydree-hero.webp";
 import everstepHero from "../assets/Images/manufacturers/everstep/everstep-hero.webp";
 import everstepHeroDesktop from "../assets/Images/manufacturers/everstep/everstep-hero-desktop.webp";
 import gilesMillerHeroPoster from "../assets/Images/manufacturers/giles-miller/giles-miller-hero-poster.webp";
+import pssHero from "../assets/Images/manufacturers/prime-surface-solutions/pss-hero.webp";
 import gilesMillerHeroVideo from "../assets/manufacturers/giles-miller-hero-web.mp4";
 
 import nydreeLogoGreen from "../assets/manufacturers/nydree_logo_green.png";
@@ -24,7 +25,7 @@ export interface Manufacturer {
   logo?: string;
   logoOnLight?: boolean;
   compactLogo?: boolean;
-  heroFocus?: "floor" | "hospitality";
+  heroFocus?: "floor" | "hospitality" | "panels";
 }
 
 export const manufacturers: Manufacturer[] = [
@@ -75,6 +76,8 @@ export const manufacturers: Manufacturer[] = [
     description:
       "Innovative decorative wall systems for hospitality and commercial interiors.",
     website: "https://www.primesurfacesolutions.biz/",
+    heroImage: pssHero,
+    heroFocus: "panels",
     logo: pssLogoBlack,
     logoOnLight: true,
     compactLogo: true,

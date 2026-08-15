@@ -8,7 +8,7 @@ interface ManufacturerHeroV2Props {
   logo?: string;
   logoOnLight?: boolean;
   compactLogo?: boolean;
-  heroFocus?: "floor" | "hospitality";
+  heroFocus?: "floor" | "hospitality" | "panels";
 }
 
 export default function ManufacturerHeroV2({
@@ -34,7 +34,7 @@ export default function ManufacturerHeroV2({
             src={heroImage}
             alt=""
             style={heroFocus === "floor" ? { objectPosition: "center bottom" } : heroFocus === "hospitality" ? { objectPosition: "center 52%" } : undefined}
-            className={`absolute inset-0 h-full w-full object-cover transition-transform duration-700 ${heroFocus === "floor" ? "origin-bottom scale-[1.5] object-bottom sm:scale-[1.32] lg:inset-x-0 lg:bottom-0 lg:top-auto lg:h-auto lg:min-h-full lg:scale-100" : "object-center"}`}
+            className={`absolute inset-0 h-full w-full object-cover transition-transform duration-700 ${heroFocus === "floor" ? "origin-bottom scale-[1.5] object-bottom sm:scale-[1.32] lg:inset-x-0 lg:bottom-0 lg:top-auto lg:h-auto lg:min-h-full lg:scale-100" : heroFocus === "panels" ? "object-[68%_center] lg:object-center" : "object-center"}`}
           />
         </picture>
       )}
