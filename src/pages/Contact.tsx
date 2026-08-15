@@ -148,8 +148,7 @@ function Contact() {
                   <button
                     type="submit"
                     disabled={status === "submitting"}
-                    className="group flex min-h-16 w-full items-center justify-between rounded-full border-2 border-[#29352F] bg-[#29352F] px-7 text-sm font-semibold uppercase tracking-[0.18em] text-white shadow-[0_12px_30px_rgba(41,53,47,.22)] transition hover:border-[#3D4A43] hover:bg-[#3D4A43] disabled:cursor-wait disabled:opacity-70 sm:px-9"
-                    style={{ color: "#FFFFFF" }}
+                    className="contact-submit-button group flex min-h-16 w-full items-center justify-between rounded-full px-7 text-sm font-semibold uppercase tracking-[0.18em] shadow-[0_12px_30px_rgba(41,53,47,.22)] transition disabled:cursor-wait disabled:opacity-70 sm:px-9"
                   >
                     <span>{status === "submitting" ? "Submitting Request…" : "Submit Request"}</span>
                     <ArrowRight aria-hidden="true" className="size-5 text-white transition-transform group-hover:translate-x-1" />
