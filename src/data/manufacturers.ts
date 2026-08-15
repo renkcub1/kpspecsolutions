@@ -18,6 +18,7 @@ export interface Manufacturer {
   logo?: string;
   logoOnLight?: boolean;
   compactLogo?: boolean;
+  heroFocus?: "floor";
 }
 
 export const manufacturers: Manufacturer[] = [
@@ -29,6 +30,7 @@ export const manufacturers: Manufacturer[] = [
       "Beautiful commercial flooring solutions combining the warmth of natural wood with the durability today's commercial environments require.",
     website: "https://www.nydreeflooring.com/",
     heroImage: nydreeHero,
+    heroFocus: "floor",
     logo: nydreeLogoGreen,
     logoOnLight: true,
   },

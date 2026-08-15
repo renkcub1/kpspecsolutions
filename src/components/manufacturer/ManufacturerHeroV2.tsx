@@ -6,6 +6,7 @@ interface ManufacturerHeroV2Props {
   logo?: string;
   logoOnLight?: boolean;
   compactLogo?: boolean;
+  heroFocus?: "floor";
 }
 
 export default function ManufacturerHeroV2({
@@ -16,6 +17,7 @@ export default function ManufacturerHeroV2({
   logo,
   logoOnLight = false,
   compactLogo = false,
+  heroFocus,
 }: ManufacturerHeroV2Props) {
   return (
     <section className={`relative min-h-[620px] overflow-hidden sm:min-h-[680px] lg:h-[760px] ${heroImage ? "bg-[#2F3533]" : "bg-gradient-to-br from-[#27302d] via-[#3f4a44] to-[#8A9A7B]"}`}>
@@ -26,7 +28,7 @@ export default function ManufacturerHeroV2({
           <img
             src={heroImage}
             alt={name}
-            className="absolute inset-0 h-full w-full object-cover object-center"
+            className={`absolute inset-0 h-full w-full object-cover transition-transform duration-700 ${heroFocus === "floor" ? "origin-bottom scale-[1.3] object-bottom sm:scale-[1.2] lg:scale-[1.12]" : "object-center"}`}
           />
 
           <div className="absolute inset-0 bg-black/40" />

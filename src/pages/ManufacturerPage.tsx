@@ -33,6 +33,7 @@ export default function ManufacturerPage() {
         logo={manufacturer.logo}
         logoOnLight={manufacturer.logoOnLight}
         compactLogo={manufacturer.compactLogo}
+        heroFocus={manufacturer.heroFocus}
       />
 
       <ManufacturerInfoCard
