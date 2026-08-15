@@ -30,6 +30,7 @@ export default function ManufacturerPage() {
         title={manufacturer.title}
         description={manufacturer.description}
         heroImage={manufacturer.heroImage}
+        heroImageDesktop={manufacturer.heroImageDesktop}
         logo={manufacturer.logo}
         logoOnLight={manufacturer.logoOnLight}
         compactLogo={manufacturer.compactLogo}

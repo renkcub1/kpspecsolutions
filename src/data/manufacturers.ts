@@ -1,5 +1,6 @@
 import nydreeHero from "../assets/Images/manufacturers/nydree/nydree-hero.webp";
 import everstepHero from "../assets/Images/manufacturers/everstep/everstep-hero.webp";
+import everstepHeroDesktop from "../assets/Images/manufacturers/everstep/everstep-hero-desktop.webp";
 
 import nydreeLogoGreen from "../assets/manufacturers/nydree_logo_green.png";
 import everstepLogoWhiteBackground from "../assets/manufacturers/everstep_logo_white_background.png";
@@ -16,6 +17,7 @@ export interface Manufacturer {
   description: string;
   website: string;
   heroImage?: string;
+  heroImageDesktop?: string;
   logo?: string;
   logoOnLight?: boolean;
   compactLogo?: boolean;
@@ -44,6 +46,7 @@ export const manufacturers: Manufacturer[] = [
       "Premium commercial luxury vinyl flooring engineered for durability and performance.",
     website: "https://www.everstepflooring.com/",
     heroImage: everstepHero,
+    heroImageDesktop: everstepHeroDesktop,
     heroFocus: "hospitality",
     logo: everstepLogoWhiteBackground,
     logoOnLight: true,

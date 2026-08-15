@@ -3,6 +3,7 @@ interface ManufacturerHeroV2Props {
   title: string;
   description: string;
   heroImage?: string;
+  heroImageDesktop?: string;
   logo?: string;
   logoOnLight?: boolean;
   compactLogo?: boolean;
@@ -14,6 +15,7 @@ export default function ManufacturerHeroV2({
   title,
   description,
   heroImage,
+  heroImageDesktop,
   logo,
   logoOnLight = false,
   compactLogo = false,
@@ -25,12 +27,15 @@ export default function ManufacturerHeroV2({
       {/* Background Image */}
       {heroImage && (
         <>
-          <img
-            src={heroImage}
-            alt={name}
-            style={heroFocus === "floor" ? { objectPosition: "center bottom" } : heroFocus === "hospitality" ? { objectPosition: "center 52%" } : undefined}
-            className={`absolute inset-0 h-full w-full object-cover transition-transform duration-700 ${heroFocus === "floor" ? "origin-bottom scale-[1.5] object-bottom sm:scale-[1.32] lg:inset-x-0 lg:bottom-0 lg:top-auto lg:h-auto lg:min-h-full lg:scale-100" : "object-center"}`}
-          />
+          <picture>
+            {heroImageDesktop && <source media="(min-width: 1024px)" srcSet={heroImageDesktop} />}
+            <img
+              src={heroImage}
+              alt={name}
+              style={heroFocus === "floor" ? { objectPosition: "center bottom" } : heroFocus === "hospitality" ? { objectPosition: "center 52%" } : undefined}
+              className={`absolute inset-0 h-full w-full object-cover transition-transform duration-700 ${heroFocus === "floor" ? "origin-bottom scale-[1.5] object-bottom sm:scale-[1.32] lg:inset-x-0 lg:bottom-0 lg:top-auto lg:h-auto lg:min-h-full lg:scale-100" : "object-center"}`}
+            />
+          </picture>
 
           <div className="absolute inset-0 bg-black/40" />
 
