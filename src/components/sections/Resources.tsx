@@ -254,10 +254,10 @@ function ResourceCard({
 
 function Resources() {
   return (
-    <section id="resources" className="scroll-mt-28 bg-[#F7F6F2] py-20 sm:py-24 lg:py-28">
+    <section className="bg-[#F7F6F2] py-20 sm:py-24 lg:py-28">
       <div className="mx-auto max-w-7xl px-6 sm:px-8">
         <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-          <div className="lg:pt-4">
+          <div id="resources" className="scroll-mt-28 lg:pt-4">
             <p className="text-xs font-medium uppercase tracking-[0.32em] text-[#91A27F]">
               Specification Support
             </p>

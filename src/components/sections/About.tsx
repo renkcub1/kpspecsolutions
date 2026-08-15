@@ -3,14 +3,13 @@ import aboutImage from "../../assets/Images/about/about-kp-spec-solutions.webp";
 function About() {
   return (
     <section
-      id="about"
       className="overflow-hidden bg-[#F8F7F3] py-16 sm:py-20 lg:py-24"
     >
       <div className="mx-auto max-w-[1550px] px-5 sm:px-8 lg:px-20">
 
         {/* Section Header */}
 
-        <div className="mb-16 max-w-4xl">
+        <div id="about" className="mb-16 max-w-4xl scroll-mt-28">
 
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#8A9A7B] sm:text-sm sm:tracking-[0.45em]">
             About KP Spec Solutions

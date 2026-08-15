@@ -1,12 +1,11 @@
 function CollectionsHeader() {
   return (
     <section
-      id="collections"
       className="bg-[#F8F7F3] pt-36 pb-24 overflow-hidden"
     >
       <div className="mx-auto max-w-[1550px] px-5 sm:px-8 lg:px-20">
 
-        <div className="max-w-5xl fade-up">
+        <div id="collections" className="max-w-5xl scroll-mt-28 fade-up">
 
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#8A9A7B] sm:text-sm sm:tracking-[0.45em]">
             Material Collections
