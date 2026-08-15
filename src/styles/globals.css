@@ -46,6 +46,38 @@ a {
   text-decoration: none;
 }
 
+.nav-primary-link {
+  position: relative;
+  color: #3d3d3d;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.nav-primary-link::after {
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: #8a9a7b;
+  content: "";
+  transition: width 0.3s ease;
+}
+
+.nav-primary-link:hover,
+.nav-primary-link:focus-visible {
+  color: #8a9a7b;
+}
+
+.nav-primary-link:hover::after,
+.nav-primary-link:focus-visible::after {
+  width: 100%;
+}
+
 :focus-visible {
   outline: 3px solid #8F9F7A;
   outline-offset: 4px;

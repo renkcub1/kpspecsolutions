@@ -9,6 +9,7 @@ import pssCatalog from "../../assets/resources/pss-catalog-2026.pdf";
 
 const resourceCards = [
   {
+    slug: "nydree",
     name: "Nydree",
     category: "Wood & Performance Flooring",
     description:
@@ -28,6 +29,7 @@ const resourceCards = [
     ],
   },
   {
+    slug: "everstep",
     name: "EverStep",
     category: "Luxury Vinyl Tile",
     description:
@@ -53,6 +55,7 @@ const resourceCards = [
     ],
   },
   {
+    slug: "giles-miller-studio",
     name: "Giles Miller Studio",
     category: "Architectural Art",
     description:
@@ -78,6 +81,7 @@ const resourceCards = [
     ],
   },
   {
+    slug: "prime-surface-solutions",
     name: "Prime Surface Solutions",
     category: "Textured Panels",
     description:
@@ -90,6 +94,7 @@ const resourceCards = [
     links: [],
   },
   {
+    slug: "tcg-glass",
     name: "TCG Glass",
     category: "Architectural Glass",
     description:
@@ -116,6 +121,7 @@ const resourceCards = [
     ],
   },
   {
+    slug: "bulo",
     name: "Bulo",
     category: "Commercial Furniture",
     description:
@@ -132,6 +138,7 @@ const resourceCards = [
     ],
   },
   {
+    slug: "point",
     name: "POINT",
     category: "Outdoor Living",
     description:
@@ -176,6 +183,7 @@ function ExternalArrow() {
 type ResourceCardProps = (typeof resourceCards)[number];
 
 function ResourceCard({
+  slug,
   name,
   category,
   description,
@@ -187,7 +195,7 @@ function ResourceCard({
   links,
 }: ResourceCardProps) {
   return (
-    <article className="overflow-hidden rounded-[2rem] border border-[#DED9CF] bg-white shadow-[0_24px_60px_rgba(43,43,43,0.08)]">
+    <article id={`resource-${slug}`} className="scroll-mt-32 overflow-hidden rounded-[2rem] border border-[#DED9CF] bg-white shadow-[0_24px_60px_rgba(43,43,43,0.08)]">
       <div className="p-7 sm:p-10">
         <div className="flex min-h-28 items-center justify-center rounded-2xl bg-[#F7F6F2] px-8 py-7 sm:min-h-36">
           <img
