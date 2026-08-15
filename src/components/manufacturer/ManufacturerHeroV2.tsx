@@ -4,6 +4,7 @@ interface ManufacturerHeroV2Props {
   description: string;
   heroImage?: string;
   heroImageDesktop?: string;
+  heroVideo?: string;
   logo?: string;
   logoOnLight?: boolean;
   compactLogo?: boolean;
@@ -16,30 +17,47 @@ export default function ManufacturerHeroV2({
   description,
   heroImage,
   heroImageDesktop,
+  heroVideo,
   logo,
   logoOnLight = false,
   compactLogo = false,
   heroFocus,
 }: ManufacturerHeroV2Props) {
   return (
-    <section className={`relative min-h-[620px] overflow-hidden sm:min-h-[680px] lg:h-[760px] ${heroImage ? "bg-[#2F3533]" : "bg-gradient-to-br from-[#27302d] via-[#3f4a44] to-[#8A9A7B]"}`}>
+    <section className={`relative min-h-[620px] overflow-hidden sm:min-h-[680px] lg:h-[760px] ${heroImage || heroVideo ? "bg-[#2F3533]" : "bg-gradient-to-br from-[#27302d] via-[#3f4a44] to-[#8A9A7B]"}`}>
 
       {/* Background Image */}
       {heroImage && (
+        <picture>
+          {heroImageDesktop && <source media="(min-width: 1024px)" srcSet={heroImageDesktop} />}
+          <img
+            src={heroImage}
+            alt=""
+            style={heroFocus === "floor" ? { objectPosition: "center bottom" } : heroFocus === "hospitality" ? { objectPosition: "center 52%" } : undefined}
+            className={`absolute inset-0 h-full w-full object-cover transition-transform duration-700 ${heroFocus === "floor" ? "origin-bottom scale-[1.5] object-bottom sm:scale-[1.32] lg:inset-x-0 lg:bottom-0 lg:top-auto lg:h-auto lg:min-h-full lg:scale-100" : "object-center"}`}
+          />
+        </picture>
+      )}
+
+      {heroVideo && (
+        <video
+          className="absolute inset-0 z-[1] h-full w-full object-cover object-center motion-reduce:hidden"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster={heroImage}
+          aria-hidden="true"
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+      )}
+
+      {(heroImage || heroVideo) && (
         <>
-          <picture>
-            {heroImageDesktop && <source media="(min-width: 1024px)" srcSet={heroImageDesktop} />}
-            <img
-              src={heroImage}
-              alt={name}
-              style={heroFocus === "floor" ? { objectPosition: "center bottom" } : heroFocus === "hospitality" ? { objectPosition: "center 52%" } : undefined}
-              className={`absolute inset-0 h-full w-full object-cover transition-transform duration-700 ${heroFocus === "floor" ? "origin-bottom scale-[1.5] object-bottom sm:scale-[1.32] lg:inset-x-0 lg:bottom-0 lg:top-auto lg:h-auto lg:min-h-full lg:scale-100" : "object-center"}`}
-            />
-          </picture>
-
-          <div className="absolute inset-0 bg-black/40" />
-
-          <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/35 to-transparent" />
+          <div className="absolute inset-0 z-[2] bg-black/40" />
+          <div className="absolute inset-0 z-[2] bg-gradient-to-r from-black/65 via-black/35 to-transparent" />
         </>
       )}
 

@@ -31,6 +31,7 @@ export default function ManufacturerPage() {
         description={manufacturer.description}
         heroImage={manufacturer.heroImage}
         heroImageDesktop={manufacturer.heroImageDesktop}
+        heroVideo={manufacturer.heroVideo}
         logo={manufacturer.logo}
         logoOnLight={manufacturer.logoOnLight}
         compactLogo={manufacturer.compactLogo}

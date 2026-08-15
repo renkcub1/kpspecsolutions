@@ -1,6 +1,8 @@
 import nydreeHero from "../assets/Images/manufacturers/nydree/nydree-hero.webp";
 import everstepHero from "../assets/Images/manufacturers/everstep/everstep-hero.webp";
 import everstepHeroDesktop from "../assets/Images/manufacturers/everstep/everstep-hero-desktop.webp";
+import gilesMillerHeroPoster from "../assets/Images/manufacturers/giles-miller/giles-miller-hero-poster.webp";
+import gilesMillerHeroVideo from "../assets/manufacturers/giles-miller-hero-web.mp4";
 
 import nydreeLogoGreen from "../assets/manufacturers/nydree_logo_green.png";
 import everstepLogoWhiteBackground from "../assets/manufacturers/everstep_logo_white_background.png";
@@ -18,6 +20,7 @@ export interface Manufacturer {
   website: string;
   heroImage?: string;
   heroImageDesktop?: string;
+  heroVideo?: string;
   logo?: string;
   logoOnLight?: boolean;
   compactLogo?: boolean;
@@ -59,6 +62,8 @@ export const manufacturers: Manufacturer[] = [
     description:
       "Sculptural architectural surfaces transforming commercial interiors.",
     website: "https://gilesmiller.com/",
+    heroImage: gilesMillerHeroPoster,
+    heroVideo: gilesMillerHeroVideo,
     logo: gmsLogoBlack,
     logoOnLight: true,
   },
