@@ -5,8 +5,10 @@ import gilesMillerHeroPoster from "../assets/Images/manufacturers/giles-miller/g
 import pssHero from "../assets/Images/manufacturers/prime-surface-solutions/pss-hero.webp";
 import pssHeroDesktop from "../assets/Images/manufacturers/prime-surface-solutions/pss-hero-desktop.webp";
 import tcgHeroPoster from "../assets/Images/manufacturers/tcg-glass/tcg-hero-poster.webp";
+import buloHeroPoster from "../assets/Images/manufacturers/bulo/bulo-hero-poster.webp";
 import gilesMillerHeroVideo from "../assets/manufacturers/giles-miller-hero-web.mp4";
 import tcgHeroVideo from "../assets/manufacturers/tcg-hero-web.mp4";
+import buloHeroVideo from "../assets/manufacturers/bulo-hero-web.mp4";
 
 import nydreeLogoGreen from "../assets/manufacturers/nydree_logo_green.png";
 import everstepLogoWhiteBackground from "../assets/manufacturers/everstep_logo_white_background.png";
@@ -107,6 +109,8 @@ export const manufacturers: Manufacturer[] = [
     description:
       "European furniture blending comfort, craftsmanship and timeless design.",
     website: "https://bulo.com/bulo-usa/",
+    heroImage: buloHeroPoster,
+    heroVideo: buloHeroVideo,
     logo: buloHeroLogo,
     logoOnLight: true,
   },
