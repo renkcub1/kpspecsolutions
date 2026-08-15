@@ -28,6 +28,7 @@ export default function ManufacturerHeroV2({
           <img
             src={heroImage}
             alt={name}
+            style={heroFocus === "floor" ? { objectPosition: "center bottom" } : undefined}
             className={`absolute inset-0 h-full w-full object-cover transition-transform duration-700 ${heroFocus === "floor" ? "origin-bottom scale-[1.5] object-bottom sm:scale-[1.32] lg:scale-100" : "object-center"}`}
           />
 
