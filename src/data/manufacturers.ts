@@ -38,7 +38,7 @@ export interface Manufacturer {
 export const manufacturers: Manufacturer[] = [
   {
     slug: "nydree",
-    name: "Nydree",
+    name: "Nydree Wood Flooring",
     title: "Wood & Performance Flooring",
     description:
       "Beautiful commercial flooring solutions combining the warmth of natural wood with the durability today's commercial environments require.",
@@ -51,7 +51,7 @@ export const manufacturers: Manufacturer[] = [
 
   {
     slug: "everstep",
-    name: "EverStep",
+    name: "Everstep Flooring (LVT)",
     title: "Luxury Vinyl Tile",
     description:
       "Premium commercial luxury vinyl flooring engineered for durability and performance.",
@@ -106,7 +106,7 @@ export const manufacturers: Manufacturer[] = [
 
   {
     slug: "bulo",
-    name: "Bulo",
+    name: "BULO Furniture",
     title: "Commercial Furniture",
     description:
       "European furniture blending comfort, craftsmanship and timeless design.",
@@ -119,7 +119,7 @@ export const manufacturers: Manufacturer[] = [
 
   {
     slug: "point",
-    name: "POINT",
+    name: "POINT Outdoor Furniture",
     title: "Outdoor Living",
     description:
       "Luxury outdoor furnishings for commercial hospitality environments.",

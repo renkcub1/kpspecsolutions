@@ -15,7 +15,7 @@ const resourceCards = [
     description:
       "Find technical specifications and supporting documentation for Nydree's acrylic-infused hardwood flooring systems.",
     logo: nydreeLogo,
-    logoAlt: "Nydree Flooring",
+    logoAlt: "Nydree Wood Flooring",
     logoClassName: "max-w-[15rem] sm:max-w-[18rem]",
     primaryLabel: "Technical Specifications",
     primaryHref: "https://nydreeflooring.com/pages/resources",
@@ -30,7 +30,7 @@ const resourceCards = [
   },
   {
     slug: "everstep",
-    name: "EverStep",
+    name: "Everstep",
     category: "Luxury Vinyl Tile",
     description:
       "Access specifications, installation instructions, maintenance guidance, warranties, adhesives, and product literature for EverStep flooring.",
@@ -122,7 +122,7 @@ const resourceCards = [
   },
   {
     slug: "bulo",
-    name: "Bulo",
+    name: "BULO",
     category: "Commercial Furniture",
     description:
       "Browse Bulo's commercial furniture portfolio and access product sheets, 3D files, Revit files, configurators, and manuals by product.",

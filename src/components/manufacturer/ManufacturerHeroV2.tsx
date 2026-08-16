@@ -23,18 +23,49 @@ export default function ManufacturerHeroV2({
   compactLogo = false,
   heroFocus,
 }: ManufacturerHeroV2Props) {
-  return (
-    <section className={`relative min-h-[620px] overflow-hidden sm:min-h-[680px] lg:h-[760px] ${heroImage || heroVideo ? "bg-[#2F3533]" : "bg-gradient-to-br from-[#27302d] via-[#3f4a44] to-[#8A9A7B]"}`}>
+  const logoContainerClass = [
+    logoOnLight
+      ? "mt-5 inline-flex max-w-full rounded-2xl bg-white px-5 py-3 shadow-sm"
+      : "mt-5",
+    heroFocus === "panels" ? "-translate-y-4 sm:translate-y-0" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
 
-      {/* Background Image */}
+  return (
+    <section
+      className={`relative min-h-[620px] overflow-hidden sm:min-h-[680px] lg:h-[760px] ${
+        heroImage || heroVideo
+          ? "bg-[#2F3533]"
+          : "bg-gradient-to-br from-[#27302d] via-[#3f4a44] to-[#8A9A7B]"
+      }`}
+    >
       {heroImage && (
         <picture>
-          {heroImageDesktop && <source media="(min-width: 1024px)" srcSet={heroImageDesktop} />}
+          {heroImageDesktop && (
+            <source
+              media="(min-width: 1024px)"
+              srcSet={heroImageDesktop}
+            />
+          )}
+
           <img
             src={heroImage}
             alt=""
-            style={heroFocus === "floor" ? { objectPosition: "center bottom" } : heroFocus === "hospitality" ? { objectPosition: "center 52%" } : undefined}
-            className={`absolute inset-0 h-full w-full object-cover transition-transform duration-700 ${heroFocus === "floor" ? "origin-bottom scale-[1.5] object-bottom sm:scale-[1.32] lg:inset-x-0 lg:bottom-0 lg:top-auto lg:h-auto lg:min-h-full lg:scale-100" : heroFocus === "panels" ? "object-[68%_center] lg:object-[center_78%]" : "object-center"}`}
+            style={
+              heroFocus === "floor"
+                ? { objectPosition: "center bottom" }
+                : heroFocus === "hospitality"
+                  ? { objectPosition: "center 52%" }
+                  : undefined
+            }
+            className={`absolute inset-0 h-full w-full object-cover transition-transform duration-700 ${
+              heroFocus === "floor"
+                ? "origin-bottom scale-[1.5] object-bottom sm:scale-[1.32] lg:inset-x-0 lg:bottom-0 lg:top-auto lg:h-auto lg:min-h-full lg:scale-100"
+                : heroFocus === "panels"
+                  ? "object-[68%_center] lg:object-[center_78%]"
+                  : "object-center"
+            }`}
           />
         </picture>
       )}
@@ -61,21 +92,22 @@ export default function ManufacturerHeroV2({
         </>
       )}
 
-      {/* Hero Content */}
       <div className="relative z-10 mx-auto flex min-h-[620px] max-w-[1550px] items-center px-5 pb-20 pt-32 sm:min-h-[680px] sm:px-8 lg:h-full lg:min-h-0 lg:items-start lg:px-10 lg:pb-0 lg:pt-[240px]">
-
         <div className="max-w-[640px]">
-
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#C8D3BE] sm:text-sm sm:tracking-[0.45em]">
             Materials That Matter
           </p>
 
           {logo ? (
-            <div className={logoOnLight ? "mt-5 inline-flex max-w-full rounded-2xl bg-white px-5 py-3 shadow-sm" : "mt-5"}>
+            <div className={logoContainerClass}>
               <img
                 src={logo}
                 alt={name}
-                className={`max-h-24 max-w-full object-contain object-center ${compactLogo ? "w-[142px]" : "w-[220px] sm:w-[260px] lg:w-[300px]"}`}
+                className={`max-h-24 max-w-full object-contain object-center ${
+                  compactLogo
+                    ? "w-[142px]"
+                    : "w-[220px] sm:w-[260px] lg:w-[300px]"
+                }`}
               />
             </div>
           ) : (
@@ -93,11 +125,8 @@ export default function ManufacturerHeroV2({
           <p className="mt-6 max-w-[430px] text-lg leading-8 text-white/90 sm:text-xl sm:leading-9 lg:mt-8 lg:text-[22px] lg:leading-10">
             {description}
           </p>
-
         </div>
-
       </div>
-
     </section>
   );
 }

@@ -30,7 +30,7 @@ export const materialCollections = [
         url: "https://www.nydreeflooring.com/",
       },
       {
-        name: "EverStep",
+        name: "Everstep",
         slug: "everstep",
         type: "Luxury Vinyl Tile",
         logo: everstepLogo,
@@ -91,7 +91,7 @@ export const materialCollections = [
       "European-inspired commercial furniture blending comfort, craftsmanship, and timeless design.",
     manufacturers: [
       {
-        name: "Bulo",
+        name: "BULO",
         slug: "bulo",
         type: "Commercial Furniture",
         logo: buloLogo,
