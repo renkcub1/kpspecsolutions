@@ -24,8 +24,14 @@ const resourceCards = [
         label: "Certifications",
         href: "https://nydreeflooring.com/pages/industry-affiliations-and-certifications",
       },
-      { label: "Sustainability", href: "https://nydreeflooring.com/pages/sustainability" },
-      { label: "CEU Courses", href: "https://nydreeflooring.com/pages/ceu-presentation-request" },
+      {
+        label: "Sustainability",
+        href: "https://nydreeflooring.com/pages/sustainability",
+      },
+      {
+        label: "CEU Courses",
+        href: "https://nydreeflooring.com/pages/ceu-presentation-request",
+      },
     ],
   },
   {
@@ -64,7 +70,8 @@ const resourceCards = [
     logoAlt: "Giles Miller Studio",
     logoClassName: "max-w-[14rem] sm:max-w-[17rem]",
     primaryLabel: "Download Brochure",
-    primaryHref: "https://gilesmiller.com/app/uploads/2026/05/GMS_Brochure.pdf",
+    primaryHref:
+      "https://gilesmiller.com/app/uploads/2026/05/GMS_Brochure.pdf",
     links: [
       {
         label: "Surface Portfolio",
@@ -89,7 +96,7 @@ const resourceCards = [
     logo: primeSurfaceLogo,
     logoAlt: "Prime Surface Solutions",
     logoClassName: "max-w-[8.875rem]",
-    primaryLabel: "View 2026 Catalog",
+    primaryLabel: "Download 2026 Catalog",
     primaryHref: pssCatalog,
     links: [],
   },
@@ -132,9 +139,18 @@ const resourceCards = [
     primaryLabel: "Browse Product Resources",
     primaryHref: "https://bulo.com/catalog/",
     links: [
-      { label: "Seating", href: "https://bulo.com/catalog/?cat=4" },
-      { label: "Tables", href: "https://bulo.com/catalog/?cat=73" },
-      { label: "Storage", href: "https://bulo.com/catalog/?cat=7" },
+      {
+        label: "Seating",
+        href: "https://bulo.com/catalog/?cat=4",
+      },
+      {
+        label: "Tables",
+        href: "https://bulo.com/catalog/?cat=73",
+      },
+      {
+        label: "Storage",
+        href: "https://bulo.com/catalog/?cat=7",
+      },
     ],
   },
   {
@@ -147,7 +163,8 @@ const resourceCards = [
     logoAlt: "POINT",
     logoClassName: "max-w-[14rem] sm:max-w-[17rem]",
     primaryLabel: "Product Data Sheets",
-    primaryHref: "https://pointsl.box.com/s/fsphj3qi6jth1pa6gh42h3h2c85n9ch7",
+    primaryHref:
+      "https://pointsl.box.com/s/fsphj3qi6jth1pa6gh42h3h2c85n9ch7",
     links: [
       {
         label: "2D / 3D Files",
@@ -175,7 +192,30 @@ function ExternalArrow() {
       stroke="currentColor"
       strokeWidth="1.75"
     >
-      <path strokeLinecap="round" strokeLinejoin="round" d="M7 17 17 7M8 7h9v9" />
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M7 17 17 7M8 7h9v9"
+      />
+    </svg>
+  );
+}
+
+function DownloadArrow() {
+  return (
+    <svg
+      aria-hidden="true"
+      className="h-4 w-4 shrink-0"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth="1.75"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"
+      />
     </svg>
   );
 }
@@ -194,8 +234,13 @@ function ResourceCard({
   primaryHref,
   links,
 }: ResourceCardProps) {
+  const isPssCatalog = slug === "prime-surface-solutions";
+
   return (
-    <article id={`resource-${slug}`} className="scroll-mt-32 overflow-hidden rounded-[2rem] border border-[#DED9CF] bg-white shadow-[0_24px_60px_rgba(43,43,43,0.08)]">
+    <article
+      id={`resource-${slug}`}
+      className="scroll-mt-32 overflow-hidden rounded-[2rem] border border-[#DED9CF] bg-white shadow-[0_24px_60px_rgba(43,43,43,0.08)]"
+    >
       <div className="p-7 sm:p-10">
         <div className="flex min-h-28 items-center justify-center rounded-2xl bg-[#F7F6F2] px-8 py-7 sm:min-h-36">
           <img
@@ -209,7 +254,11 @@ function ResourceCard({
           <p className="text-xs font-medium uppercase tracking-[0.28em] text-[#91A27F]">
             {category}
           </p>
-          <h3 className="mt-3 font-serif text-3xl text-[#2B2B2B] sm:text-4xl">{name}</h3>
+
+          <h3 className="mt-3 font-serif text-3xl text-[#2B2B2B] sm:text-4xl">
+            {name}
+          </h3>
+
           <p className="mt-3 max-w-2xl text-sm leading-6 text-[#666] sm:text-base sm:leading-7">
             {description}
           </p>
@@ -217,13 +266,18 @@ function ResourceCard({
 
         <a
           href={primaryHref}
-          target="_blank"
-          rel="noopener noreferrer"
+          target={isPssCatalog ? undefined : "_blank"}
+          rel={isPssCatalog ? undefined : "noopener noreferrer"}
+          download={
+            isPssCatalog
+              ? "Prime-Surface-Solutions-2026-Catalog.pdf"
+              : undefined
+          }
           style={{ color: "#FFFFFF" }}
           className="mt-7 flex min-h-14 w-full items-center justify-between rounded-full bg-[#2F3834] px-6 text-xs font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#222A27] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2F3834] sm:w-auto sm:min-w-80"
         >
           {primaryLabel}
-          <ExternalArrow />
+          {isPssCatalog ? <DownloadArrow /> : <ExternalArrow />}
         </a>
       </div>
 
@@ -232,6 +286,7 @@ function ResourceCard({
           <p className="mb-3 text-[0.68rem] font-medium uppercase tracking-[0.24em] text-[#777]">
             More from {name}
           </p>
+
           <div className="grid sm:grid-cols-3">
             {links.map((resource) => (
               <a
@@ -261,17 +316,22 @@ function Resources() {
             <p className="text-xs font-medium uppercase tracking-[0.32em] text-[#91A27F]">
               Specification Support
             </p>
+
             <h2 className="mt-4 font-serif text-5xl leading-none text-[#2B2B2B] sm:text-6xl">
               Technical Resources
             </h2>
+
             <p className="mt-6 max-w-xl text-base leading-7 text-[#666] sm:text-lg sm:leading-8">
-              Access current product literature, technical specifications, certifications,
-              and continuing education directly from our represented manufacturers.
+              Access current product literature, technical specifications,
+              certifications, and continuing education directly from our
+              represented manufacturers.
             </p>
+
             <p className="mt-5 max-w-xl text-sm leading-6 text-[#777]">
-              Need help finding the right document or reviewing a specification? We are
-              here to support your project.
+              Need help finding the right document or reviewing a specification?
+              We are here to support your project.
             </p>
+
             <a
               href="/contact"
               style={{ color: "#FFFFFF" }}
