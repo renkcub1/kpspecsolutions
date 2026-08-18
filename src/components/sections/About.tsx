@@ -3,20 +3,19 @@ import aboutImage from "../../assets/Images/about/about-kp-spec-solutions.webp";
 function About() {
   return (
     <section
-      id="about"
-      className="bg-[#F8F7F3] py-24 overflow-hidden"
+      className="overflow-hidden bg-[#F8F7F3] py-16 sm:py-20 lg:py-24"
     >
-      <div className="mx-auto max-w-[1550px] px-10 lg:px-20">
+      <div className="mx-auto max-w-[1550px] px-5 sm:px-8 lg:px-20">
 
         {/* Section Header */}
 
-        <div className="mb-16 max-w-4xl">
+        <div id="about" className="mb-16 max-w-4xl scroll-mt-28">
 
-          <p className="uppercase tracking-[0.45em] text-sm font-semibold text-[#8A9A7B]">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#8A9A7B] sm:text-sm sm:tracking-[0.45em]">
             About KP Spec Solutions
           </p>
 
-          <h2 className="mt-5 font-serif text-[64px] lg:text-[76px] leading-[0.92] text-[#2B2B2B]">
+          <h2 className="mt-5 font-serif text-5xl leading-[0.95] text-[#2B2B2B] sm:text-6xl lg:text-[76px]">
             Materials That Matter
           </h2>
 
@@ -26,7 +25,7 @@ function About() {
 
         {/* Main Layout */}
 
-        <div className="grid items-center gap-20 lg:grid-cols-[1.45fr_auto_0.9fr]">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.45fr_auto_0.9fr] lg:gap-20">
 
           {/* Image */}
 
@@ -53,13 +52,13 @@ function About() {
 
           <div className="fade-up max-w-[500px]">
 
-            <p className="text-[22px] leading-10 text-[#4A4A4A]">
+            <p className="text-lg leading-8 text-[#4A4A4A] sm:text-xl sm:leading-9 lg:text-[22px] lg:leading-10">
               We help architects, designers, owners and contractors specify
               thoughtfully curated architectural materials that balance
               exceptional design, proven performance and lasting value.
             </p>
 
-            <p className="mt-10 text-[22px] leading-10 text-[#4A4A4A]">
+            <p className="mt-7 text-lg leading-8 text-[#4A4A4A] sm:text-xl sm:leading-9 lg:mt-10 lg:text-[22px] lg:leading-10">
               Serving clients throughout
               <strong> Georgia, Alabama and Tennessee</strong>, we guide
               projects from concept through construction with trusted
@@ -71,7 +70,7 @@ function About() {
 
             <div className="mt-16 border-t border-[#DDD7CC] pt-8">
 
-              <div className="flex items-center gap-12">
+              <div className="flex flex-col items-start gap-8 sm:flex-row sm:items-center sm:gap-12">
 
                 <div>
 
@@ -87,7 +86,7 @@ function About() {
 
                 </div>
 
-                <div className="h-16 w-px bg-[#DDD7CC]" />
+                <div className="h-px w-full bg-[#DDD7CC] sm:h-16 sm:w-px" />
 
                 <div>
 

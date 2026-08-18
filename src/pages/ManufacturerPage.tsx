@@ -30,7 +30,12 @@ export default function ManufacturerPage() {
         title={manufacturer.title}
         description={manufacturer.description}
         heroImage={manufacturer.heroImage}
+        heroImageDesktop={manufacturer.heroImageDesktop}
+        heroVideo={manufacturer.heroVideo}
         logo={manufacturer.logo}
+        logoOnLight={manufacturer.logoOnLight}
+        compactLogo={manufacturer.compactLogo}
+        heroFocus={manufacturer.heroFocus}
       />
 
       <ManufacturerInfoCard
@@ -41,20 +46,20 @@ export default function ManufacturerPage() {
 
       {/* About */}
 
-      <section className="mx-auto grid max-w-7xl gap-24 px-8 pt-52 pb-28 lg:grid-cols-2">
+      <section className="mx-auto grid max-w-7xl gap-10 px-5 pb-16 pt-20 sm:px-8 sm:pb-20 sm:pt-28 lg:grid-cols-2 lg:gap-24 lg:pb-28 lg:pt-52">
 
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.35em] text-[#8A9A7B]">
             About
           </p>
 
-          <h2 className="mt-5 font-serif text-5xl leading-tight text-[#2B2B2B]">
+          <h2 className="mt-5 font-serif text-4xl leading-tight text-[#2B2B2B] sm:text-5xl">
             Designed for Commercial Interiors
           </h2>
         </div>
 
         <div>
-          <p className="text-xl leading-10 text-[#555]">
+          <p className="text-lg leading-8 text-[#555] sm:text-xl sm:leading-10">
             {manufacturer.description}
           </p>
         </div>
@@ -63,7 +68,7 @@ export default function ManufacturerPage() {
 
       {/* Features */}
 
-      <section className="mx-auto max-w-7xl px-8 pb-28">
+      <section className="mx-auto max-w-7xl px-5 pb-16 sm:px-8 sm:pb-24 lg:pb-28">
 
         <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
 
@@ -93,15 +98,15 @@ export default function ManufacturerPage() {
 
       {/* CTA */}
 
-      <section className="mx-auto max-w-7xl px-8 pb-36">
+      <section className="mx-auto max-w-7xl px-5 pb-20 sm:px-8 sm:pb-28 lg:pb-36">
 
-        <div className="rounded-[40px] bg-[#2F3533] px-16 py-20 text-center">
+        <div className="rounded-[28px] bg-[#2F3533] px-5 py-14 text-center sm:rounded-[40px] sm:px-10 sm:py-16 lg:px-16 lg:py-20">
 
-          <p className="text-sm uppercase tracking-[0.45em] text-[#AAB998]">
+          <p className="text-xs uppercase tracking-[0.25em] text-[#AAB998] sm:text-sm sm:tracking-[0.45em]">
             REPRESENTED BY KP SPEC SOLUTIONS
           </p>
 
-          <h2 className="mt-6 font-serif text-5xl text-white">
+          <h2 className="mt-6 font-serif text-4xl text-white sm:text-5xl">
             Learn More About {manufacturer.name}
           </h2>
 

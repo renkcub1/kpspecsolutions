@@ -3,7 +3,12 @@ interface ManufacturerHeroV2Props {
   title: string;
   description: string;
   heroImage?: string;
+  heroImageDesktop?: string;
+  heroVideo?: string;
   logo?: string;
+  logoOnLight?: boolean;
+  compactLogo?: boolean;
+  heroFocus?: "floor" | "hospitality" | "panels";
 }
 
 export default function ManufacturerHeroV2({
@@ -11,61 +16,117 @@ export default function ManufacturerHeroV2({
   title,
   description,
   heroImage,
+  heroImageDesktop,
+  heroVideo,
   logo,
+  logoOnLight = false,
+  compactLogo = false,
+  heroFocus,
 }: ManufacturerHeroV2Props) {
-  return (
-    <section className="relative h-[760px] overflow-hidden">
+  const logoContainerClass = [
+    logoOnLight
+      ? "mt-5 inline-flex max-w-full rounded-2xl bg-white px-5 py-3 shadow-sm"
+      : "mt-5",
+    heroFocus === "panels" ? "-translate-y-4 sm:translate-y-0" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
 
-      {/* Background Image */}
+  return (
+    <section
+      className={`relative min-h-[620px] overflow-hidden sm:min-h-[680px] lg:h-[760px] ${
+        heroImage || heroVideo
+          ? "bg-[#2F3533]"
+          : "bg-gradient-to-br from-[#27302d] via-[#3f4a44] to-[#8A9A7B]"
+      }`}
+    >
       {heroImage && (
-        <>
+        <picture>
+          {heroImageDesktop && (
+            <source
+              media="(min-width: 1024px)"
+              srcSet={heroImageDesktop}
+            />
+          )}
+
           <img
             src={heroImage}
-            alt={name}
-            className="absolute inset-0 h-full w-full object-cover object-center"
+            alt=""
+            style={
+              heroFocus === "floor"
+                ? { objectPosition: "center bottom" }
+                : heroFocus === "hospitality"
+                  ? { objectPosition: "center 52%" }
+                  : undefined
+            }
+            className={`absolute inset-0 h-full w-full object-cover transition-transform duration-700 ${
+              heroFocus === "floor"
+                ? "origin-bottom scale-[1.5] object-bottom sm:scale-[1.32] lg:inset-x-0 lg:bottom-0 lg:top-auto lg:h-auto lg:min-h-full lg:scale-100"
+                : heroFocus === "panels"
+                  ? "object-[68%_center] lg:object-[center_78%]"
+                  : "object-center"
+            }`}
           />
+        </picture>
+      )}
 
-          <div className="absolute inset-0 bg-black/40" />
+      {heroVideo && (
+        <video
+          className="absolute inset-0 z-[1] h-full w-full object-cover object-center motion-reduce:hidden"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster={heroImage}
+          aria-hidden="true"
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+      )}
 
-          <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/35 to-transparent" />
+      {(heroImage || heroVideo) && (
+        <>
+          <div className="absolute inset-0 z-[2] bg-black/20" />
+          <div className="absolute inset-0 z-[2] bg-gradient-to-r from-black/45 via-black/20 to-transparent" />
         </>
       )}
 
-      {/* Hero Content */}
-      <div className="relative z-10 mx-auto flex h-full max-w-[1550px] items-start px-10 pt-[240px]">
-
+      <div className="relative z-10 mx-auto flex min-h-[620px] max-w-[1550px] items-center px-5 pb-20 pt-32 sm:min-h-[680px] sm:px-8 lg:h-full lg:min-h-0 lg:items-start lg:px-10 lg:pb-0 lg:pt-[240px]">
         <div className="max-w-[640px]">
-
-          <p className="text-sm font-semibold uppercase tracking-[0.45em] text-[#C8D3BE]">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#C8D3BE] sm:text-sm sm:tracking-[0.45em]">
             Materials That Matter
           </p>
 
           {logo ? (
-            <img
-              src={logo}
-              alt={name}
-              className="mt-4 w-[300px] max-w-full object-contain"
-            />
+            <div className={logoContainerClass}>
+              <img
+                src={logo}
+                alt={name}
+                className={`max-h-24 max-w-full object-contain object-center ${
+                  compactLogo
+                    ? "w-[142px]"
+                    : "w-[220px] sm:w-[260px] lg:w-[300px]"
+                }`}
+              />
+            </div>
           ) : (
-            <h1 className="mt-8 font-serif text-8xl text-white">
+            <h1 className="mt-8 font-serif text-5xl text-white sm:text-7xl lg:text-8xl">
               {name}
             </h1>
           )}
 
           <div className="mt-8 h-[3px] w-14 rounded-full bg-[#8A9A7B]" />
 
-          <h2 className="mt-8 text-[36px] font-light text-white">
+          <h2 className="mt-7 text-2xl font-light text-white sm:text-3xl lg:text-[36px]">
             {title}
           </h2>
 
-          <p className="mt-8 max-w-[430px] text-[22px] leading-10 text-white/90">
+          <p className="mt-6 max-w-[430px] text-lg leading-8 text-white/90 sm:text-xl sm:leading-9 lg:mt-8 lg:text-[22px] lg:leading-10">
             {description}
           </p>
-
         </div>
-
       </div>
-
     </section>
   );
 }

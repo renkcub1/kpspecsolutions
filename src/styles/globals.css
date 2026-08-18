@@ -5,6 +5,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
 }
 
 *,
@@ -45,6 +46,58 @@ a {
   text-decoration: none;
 }
 
+.nav-primary-link {
+  position: relative;
+  color: #3d3d3d;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.nav-primary-link::after {
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: #8a9a7b;
+  content: "";
+  transition: width 0.3s ease;
+}
+
+.nav-primary-link:hover,
+.nav-primary-link:focus-visible {
+  color: #8a9a7b;
+}
+
+.nav-primary-link:hover::after,
+.nav-primary-link:focus-visible::after {
+  width: 100%;
+}
+
+:focus-visible {
+  outline: 3px solid #8F9F7A;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* ==========================================
    LISTS
 ========================================== */
@@ -65,6 +118,17 @@ button {
   cursor: pointer;
   border: none;
   background: none;
+}
+
+.contact-submit-button {
+  border: 2px solid #29352f;
+  background: #29352f;
+  color: #fff;
+}
+
+.contact-submit-button:hover {
+  border-color: #3d4a43;
+  background: #3d4a43;
 }
 
 /* ==========================================
@@ -156,6 +220,52 @@ button {
   background: var(--color-sage-dark);
 
   transform: translateY(-2px);
+}
+
+/* ==========================================
+   MANUFACTURER MARQUEE
+========================================== */
+
+.manufacturer-marquee {
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
+
+.manufacturer-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: manufacturer-marquee 46s linear infinite;
+  will-change: transform;
+}
+
+.manufacturer-marquee-group {
+  display: flex;
+  flex-shrink: 0;
+  gap: 3rem;
+}
+
+@keyframes manufacturer-marquee {
+  from {
+    transform: translateX(100vw);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .manufacturer-marquee {
+    overflow-x: auto;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+
+  .manufacturer-marquee-track {
+    animation: none !important;
+  }
 }
 
 /* ==========================================

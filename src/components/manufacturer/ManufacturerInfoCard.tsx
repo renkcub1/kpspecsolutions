@@ -10,16 +10,16 @@ export default function ManufacturerInfoCard({
   website,
 }: ManufacturerInfoCardProps) {
   return (
-    <section className="relative z-30">
-      <div className="relative mx-auto max-w-[1550px] px-8">
+    <section className="relative z-30 -mt-10 px-5 sm:-mt-16 sm:px-8 lg:mt-0 lg:px-0">
+      <div className="relative mx-auto max-w-[1550px]">
 
-        <div className="absolute right-8 -top-60 w-full max-w-md rounded-[28px] border border-[#E5E1D8] bg-white p-10 shadow-[0_30px_80px_rgba(0,0,0,0.12)]">
+        <div className="relative w-full rounded-[24px] border border-[#E5E1D8] bg-white p-6 shadow-[0_30px_80px_rgba(0,0,0,0.12)] sm:p-8 lg:absolute lg:right-8 lg:-top-60 lg:max-w-md lg:rounded-[28px] lg:p-10">
 
           <p className="text-xs uppercase tracking-[0.35em] text-[#8A9A7B]">
             Represented by KP Spec Solutions
           </p>
 
-          <h3 className="mt-5 font-serif text-5xl text-[#252A25]">
+          <h3 className="mt-5 font-serif text-4xl text-[#252A25] sm:text-5xl">
             {name}
           </h3>
 
