@@ -29,11 +29,23 @@
 
   <script type="module" src="/src/main.tsx"></script>
 
-  <script
-    src="https://widgets.leadconnectorhq.com/loader.js"
-    data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-    data-widget-id="6a90abbfd45d62178f9e8955"
-    data-source="WEB_USER">
-  </script>
+<script>
+  if (
+    window.location.pathname !== "/contact" &&
+    !window.location.pathname.startsWith("/contact/")
+  ) {
+    const ghlWidget = document.createElement("script");
+
+    ghlWidget.src =
+      "https://widgets.leadconnectorhq.com/loader.js";
+    ghlWidget.dataset.resourcesUrl =
+      "https://widgets.leadconnectorhq.com/chat-widget/loader.js";
+    ghlWidget.dataset.widgetId =
+      "6a90abbfd45d62178f9e8955";
+    ghlWidget.dataset.source = "WEB_USER";
+
+    document.body.appendChild(ghlWidget);
+  }
+</script>
 </body>
 </html>
