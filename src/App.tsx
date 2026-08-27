@@ -7,6 +7,8 @@ import Footer from "./components/layout/Footer";
 import Home from "./pages/Home";
 import ManufacturerPage from "./pages/ManufacturerPage";
 import Contact from "./pages/Contact";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsAndConditions from "./pages/TermsAndConditions";
 
 function App() {
   return (
@@ -17,6 +19,14 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
+        <Route
+          path="/privacy-policy"
+          element={<PrivacyPolicy />}
+        />
+        <Route
+          path="/terms-and-conditions"
+          element={<TermsAndConditions />}
+        />
         <Route
           path="/manufacturers/:slug"
           element={<ManufacturerPage />}
