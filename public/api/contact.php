@@ -24,8 +24,14 @@ if (!is_file($configPath)) {
 $config = require $configPath;
 $recipient = is_array($config) ? ($config['recipient'] ?? '') : '';
 $sender = is_array($config) ? ($config['sender'] ?? '') : '';
+$turnstileSecret = is_array($config) ? ($config['turnstile_secret'] ?? '') : '';
 
-if (!filter_var($recipient, FILTER_VALIDATE_EMAIL) || !filter_var($sender, FILTER_VALIDATE_EMAIL)) {
+if (
+    !filter_var($recipient, FILTER_VALIDATE_EMAIL)
+    || !filter_var($sender, FILTER_VALIDATE_EMAIL)
+    || !is_string($turnstileSecret)
+    || trim($turnstileSecret) === ''
+) {
     respond(503, 'Contact service is not configured.');
 }
 
@@ -54,9 +60,52 @@ $project = clean($data, 'project', 200);
 $manufacturer = clean($data, 'manufacturer', 120);
 $assistance = clean($data, 'assistance', 120);
 $message = clean($data, 'message', 5000);
+$turnstileToken = clean($data, 'turnstileToken', 2048);
 
-if ($name === '' || $assistance === '' || $message === '' || !filter_var($replyTo, FILTER_VALIDATE_EMAIL)) {
+if (
+    $name === ''
+    || $assistance === ''
+    || $message === ''
+    || $turnstileToken === ''
+    || !filter_var($replyTo, FILTER_VALIDATE_EMAIL)
+) {
     respond(422, 'Please complete all required fields.');
+}
+
+$verificationPayload = http_build_query([
+    'secret' => $turnstileSecret,
+    'response' => $turnstileToken,
+    'remoteip' => (string) ($_SERVER['REMOTE_ADDR'] ?? ''),
+]);
+
+$curl = curl_init('https://challenges.cloudflare.com/turnstile/v0/siteverify');
+if ($curl === false) {
+    respond(503, 'Security verification is unavailable.');
+}
+
+curl_setopt_array($curl, [
+    CURLOPT_POST => true,
+    CURLOPT_POSTFIELDS => $verificationPayload,
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_CONNECTTIMEOUT => 5,
+    CURLOPT_TIMEOUT => 10,
+    CURLOPT_HTTPHEADER => ['Content-Type: application/x-www-form-urlencoded'],
+]);
+
+$verificationResponse = curl_exec($curl);
+$verificationStatus = (int) curl_getinfo($curl, CURLINFO_HTTP_CODE);
+curl_close($curl);
+
+$verification = is_string($verificationResponse)
+    ? json_decode($verificationResponse, true)
+    : null;
+
+if (
+    $verificationStatus !== 200
+    || !is_array($verification)
+    || ($verification['success'] ?? false) !== true
+) {
+    respond(403, 'Security verification failed. Please try again.');
 }
 
 $subject = 'KP Spec Solutions website request: ' . str_replace(["\r", "\n"], ' ', $assistance);
