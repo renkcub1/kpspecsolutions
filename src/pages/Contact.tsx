@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { FormEvent } from "react";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { useSearchParams } from "react-router-dom";
@@ -7,8 +7,32 @@ import { manufacturers } from "../data/manufacturers";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
+declare global {
+  interface Window {
+    turnstile?: {
+      render: (
+        container: HTMLElement,
+        options: {
+          sitekey: string;
+          theme?: "light" | "dark" | "auto";
+          callback: (token: string) => void;
+          "expired-callback": () => void;
+          "error-callback": () => void;
+        },
+      ) => string;
+      reset: (widgetId?: string) => void;
+      remove: (widgetId: string) => void;
+    };
+  }
+}
+
+const TURNSTILE_SITE_KEY = "0x4AAAAAAFvo_8pmPETyEZio";
+
 function Contact() {
   const [status, setStatus] = useState<FormStatus>("idle");
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const turnstileContainerRef = useRef<HTMLDivElement>(null);
+  const turnstileWidgetIdRef = useRef<string | null>(null);
   const [searchParams] = useSearchParams();
 
   const requestedAssistance =
@@ -20,12 +44,73 @@ function Contact() {
     window.scrollTo({ top: 0, behavior: "instant" });
   }, []);
 
+  useEffect(() => {
+    let cancelled = false;
+
+    const renderTurnstile = () => {
+      if (
+        cancelled ||
+        !window.turnstile ||
+        !turnstileContainerRef.current ||
+        turnstileWidgetIdRef.current
+      ) {
+        return;
+      }
+
+      turnstileWidgetIdRef.current = window.turnstile.render(
+        turnstileContainerRef.current,
+        {
+          sitekey: TURNSTILE_SITE_KEY,
+          theme: "light",
+          callback: setTurnstileToken,
+          "expired-callback": () => setTurnstileToken(""),
+          "error-callback": () => setTurnstileToken(""),
+        },
+      );
+    };
+
+    const existingScript = document.querySelector<HTMLScriptElement>(
+      'script[data-kp-turnstile="true"]',
+    );
+
+    if (window.turnstile) {
+      renderTurnstile();
+    } else if (existingScript) {
+      existingScript.addEventListener("load", renderTurnstile, { once: true });
+    } else {
+      const script = document.createElement("script");
+      script.src =
+        "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+      script.async = true;
+      script.defer = true;
+      script.dataset.kpTurnstile = "true";
+      script.addEventListener("load", renderTurnstile, { once: true });
+      document.head.appendChild(script);
+    }
+
+    return () => {
+      cancelled = true;
+
+      if (turnstileWidgetIdRef.current && window.turnstile) {
+        window.turnstile.remove(turnstileWidgetIdRef.current);
+        turnstileWidgetIdRef.current = null;
+      }
+    };
+  }, []);
+
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setStatus("submitting");
 
     const form = event.currentTarget;
     const formData = new FormData(form);
+
+    if (!turnstileToken) {
+      setStatus("error");
+      return;
+    }
+
+    formData.set("turnstileToken", turnstileToken);
 
     try {
       const response = await fetch("/api/contact", {
@@ -41,8 +126,12 @@ function Contact() {
       }
 
       form.reset();
+      setTurnstileToken("");
+      window.turnstile?.reset(turnstileWidgetIdRef.current ?? undefined);
       setStatus("success");
     } catch {
+      setTurnstileToken("");
+      window.turnstile?.reset(turnstileWidgetIdRef.current ?? undefined);
       setStatus("error");
     }
   }
@@ -286,6 +375,14 @@ function Contact() {
                 </div>
 
                 <div className="sm:col-span-2">
+                  <div
+                    ref={turnstileContainerRef}
+                    className="flex min-h-[65px] justify-center sm:justify-start"
+                    aria-label="Security verification"
+                  />
+                </div>
+
+                <div className="sm:col-span-2">
                   <button
                     type="submit"
                     disabled={status === "submitting"}
@@ -308,8 +405,8 @@ function Contact() {
                       className="mt-4 text-sm leading-6 text-[#9B3C31]"
                       role="alert"
                     >
-                      The secure form connection is not active yet. Please try
-                      again after the site is published.
+                      Please complete the security check and try again. If the
+                      problem continues, please refresh the page.
                     </p>
                   )}
 
