@@ -5,4 +5,5 @@
 return [
     'recipient' => 'your-private-recipient@example.com',
     'sender' => 'website@your-domain.example',
+    'turnstile_secret' => 'your-cloudflare-turnstile-secret-key',
 ];
